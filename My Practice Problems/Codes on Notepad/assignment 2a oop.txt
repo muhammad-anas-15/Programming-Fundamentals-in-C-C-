@@ -1,0 +1,103 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+class daytype {
+    string day[7];
+    string d;
+    int counter;
+public:
+    daytype() {
+        day[0] = "Monday";
+        day[1] = "Tuesday";
+        day[2] = "Wednesday";
+        day[3] = "Thursday";
+        day[4] = "Friday";
+        day[5] = "Saturday";
+        day[6] = "Sunday";
+    }
+
+    void printday() {
+        for (int i = 0; i < 7; i++)
+            cout << (i + 1) << ":" << day[i] << endl;
+    }
+
+    void getDay() {
+        string z;
+        cout << "Enter the day (What day is today): ";
+        getline(cin, z);
+        d = z;
+    }
+
+    void compare() {
+        for (int i = 0; i < 7; i++) {
+            if (d == day[i]) {
+                counter = i;
+                break; // Add break to exit loop once match found
+            }
+        }
+    }
+
+    void PrevNext() {
+        if (counter > 0)
+            cout << "Previous day: " << day[counter - 1] << endl;
+        else
+            cout << "Previous day: " << day[6] << endl;
+
+        cout << "Today is: " << day[counter] << endl;
+
+        if (counter < 6)
+            cout << "Next day: " << day[counter + 1] << endl;
+        else
+            cout << "Next day: " << day[0] << endl;
+    }
+
+    int getN() {
+        int tar;
+        cout << "Enter the Number: ";
+        cin >> tar;
+        return tar;
+    }
+
+    void F_day(int tarD) {
+        int I = (tarD + counter) % 7;
+        cout << "The day after " << tarD << " days is: " << day[I] << endl;
+    }
+
+    void getNextDay() {
+        counter = (counter + 1) % 7;
+        cout << "Next day is: " << day[counter] << endl;
+    }
+
+    void getPrevDay() {
+        counter = (counter - 1 + 7) % 7;
+        cout << "Previous day is: " << day[counter] << endl;
+    }
+
+    string addDays(int daysToAdd) {
+        int totalDays = (counter + daysToAdd) % 7;
+        return day[totalDays];
+    }
+};
+
+int main() {
+    int tar;
+    daytype day;
+    day.printday();
+    day.getDay();
+    day.compare();
+    tar = day.getN();
+    day.PrevNext();
+    day.F_day(tar);
+    day.getNextDay();
+    day.getPrevDay();
+
+    int daysToAdd;
+    cout << "Enter number of days to add: ";
+    cin >> daysToAdd;
+    cout << "The day after adding " << daysToAdd << " days is: " << day.addDays(daysToAdd) << endl;
+
+    system("pause");
+    return 0;
+}

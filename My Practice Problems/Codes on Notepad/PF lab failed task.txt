@@ -1,0 +1,340 @@
+1) Create a C program that takes a numerical input and performs mathematical calculations based on the value provided. If the input falls within the range from 0 to 1 (inclusive), the program should calculate the inverse sine function. For input values outside this range, the program should compute the cosine function (cos). Ensure you create a user-defined function to handle the calculations and return the answer.
+
+Code:
+
+#include <stdio.h>
+#include<math.h>
+float calculate(float number)
+{
+    float answer;
+    if(number>=0 && number<=1)
+    {
+        answer =asin(number);
+    }
+    else
+    {
+        answer =acos(number);
+    }
+    return answer;
+}
+int main()
+{
+float number,result;
+printf("Enter number:");
+scanf("%f",&number);
+
+result =calculate(number);
+printf("The Angle is %f",result);
+
+return 0;
+}
+
+2) Leap year find with your birthday.
+
+Code:
+#include <stdio.h>
+int main()
+{
+    int year,number_of_days;
+
+    printf("Enter year: ");
+    scanf("%d", &year);
+    
+    printf("Enter year of days in Feb month: ");
+    scanf("%d", &number_of_days);
+    
+    printf("Enter your Birthday Date:");
+    scanf("%d %d",&number_of_days,&year);
+
+    if(number_of_days >=1 && number_of_days<= 29)
+    {
+        if(year %4==0)
+        {
+            printf("%d is a Leap year",year);
+        }
+    }
+    else
+    {
+
+    printf("IT is not a Leap year");
+    }
+    return 0;
+}
+
+Output:
+Enter year: 2000
+Enter year of days in Feb month: 29
+Enter your Birthday Date:4 2004
+2004 is a Leap year.
+
+3) Prime Number find through function.
+
+Code:
+#include <stdio.h>
+void prime_number(int number)
+{
+    int result=0;
+    for(int i=1; i<=number; i++)
+{
+    if(number %i ==0)
+    {
+        result++;
+    }
+}
+    if(result==2)
+    {
+        printf("Number is Prime");
+    }
+    else
+    {
+      printf("Number is not Prime");   
+    
+}
+}
+int main()
+{
+int number,result=0;
+printf("Enter number:");
+scanf("%d",&number);
+
+prime_number(number);
+
+return 0;
+}
+
+4) Sum of series  
+
+code:
+#include <stdio.h>
+int factorial(int n)
+{
+    int result_k=1;
+    for(int k=n; k>=1; k--)
+    {
+        result_k *=k;
+    }
+    return result_k; 
+    
+}
+int power(int x,int k)
+{
+    int result= 1;
+    for (int i=0; i< k; i++){
+    result *=x;
+    }
+    return result;
+}
+
+
+int main() {
+ 
+  int n,x, k;
+  float sum =0.0;
+       printf("Enter the value f n:");
+       scanf("%d",&n);
+       printf("Enter the value f x:");
+       scanf("%d",&x);
+
+ 
+
+for(int k=0; k<=n; k++)
+{
+    float divide = power(x,k)/(float) factorial(k);
+    sum += divide;
+}
+printf("Sum of series is %f", sum);
+
+    return 0;
+}
+
+Output:
+Enter the value f n:5
+Enter the value f x:3
+Sum of series is 18.4
+
+5) Prime numbers between two numbers
+
+Code:
+#include <stdio.h>
+
+int main() 
+{
+    int m,n,count=0;
+    
+    printf("Enter first number m:");
+    scanf("%d",&m);
+    printf("Enter second number n:");
+    scanf("%d",&n);
+    
+    for (int i=m+1 ;i<n; i++){
+        int isPrime = 1;
+      for(int k=2; k<i; k++){
+
+          if (i%k==0)
+          {
+              isPrime = 0;
+          break;
+          }
+      } 
+          if (isPrime){
+          
+              printf("%d\n",i);
+          }
+      }
+    
+    
+}
+0utput:
+Enter first number m:10
+Enter second number n:30
+11
+13
+17
+19
+23
+29
+
+6) Multiplication of 2 matrices
+code:
+#include <stdio.h>
+int main()
+{
+int rows1,columns1,rows2,columns2;
+printf("Enter number of rows of matrix 1:");
+scanf("%d",&rows1);
+printf("Enter number of colums of matrix 1:");
+scanf("%d",&columns1);
+int arr1[rows1][columns1];
+for (int i=0; i<rows1; i++)
+{
+for (int j=0; j<columns1;j++)
+{
+scanf("%d",&arr1[i][j]);
+}
+}
+printf("Enter number of rows of matrix 2:");
+scanf("%d",&rows2);
+printf("Enter number of colums of matrix 2:");
+scanf("%d",&columns2);
+int arr2[rows2][columns2];
+for (int i=0; i<rows2; i++)
+{
+for (int j=0; j<columns2;j++)
+{
+scanf("%d",&arr2[i][j]);
+
+}
+}
+int result[2][2];
+int rc = 2;
+
+if (columns1 != rows2)
+{
+printf("Matrices can't multiplied");
+}
+else
+{
+for(int i=0; i<rows1;i++)
+for(int j=0; j<columns2; j++)
+{
+result[i][j]=0;
+for (int k=0; k<rc;k++)
+{
+result[i][j] += arr1[i][k] * arr1[k][j];
+}
+}
+for(int i=0; i<rows1;i++)
+{
+for(int j=0; j<columns2; j++)
+{
+printf("product is %d ",result[i][j]);
+}
+printf ("\n");
+}
+}
+return 0;
+}
+
+7) random number generator most imp
+
+Code:
+   #include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+int randomno() {
+    sleep(1);
+    int num;
+    srand(time(NULL));
+    num = rand() % 10 + 1;
+    return num;
+}
+
+int main() {
+    int number;
+
+    printf("Enter your bonds between (1-10): ");
+    scanf("%d", &number);
+
+    int arr[number];
+    srand(time(NULL));
+
+    for (int i = 0; i < number; i++) {
+        arr[i] = randomno();
+    }
+
+    for (int i = 0; i < number; i++) {
+        printf("For bond number %d: ", i + 1);
+        if (arr[i] == 1) {
+            printf("You won 500 rupees\n");
+        } else if (arr[i] == 2) {
+            printf("You won 1 Lakh rupees\n");
+        } else if (arr[i] == 3) {
+            printf("You won 500 rupees\n");
+        }
+        else if (arr[i] == 5) {
+            printf("You won 10 Thousand rupees\n");
+        }
+        else if (arr[i] == 7) {
+            printf("You won 1 Million rupees\n");
+        }else {
+            printf("You won 500 rupees\n");
+        }
+    }
+
+    return 0;
+}
+
+8) GCD between two numbers
+
+Code:
+
+#include <stdio.h>
+int GCD(int a, int b)
+{
+    int gcd;
+    if(b>a)
+    {
+    int temp =a;
+       a=b;
+       b=temp;
+    }
+    while(b!=0)
+    {
+        int remainder = a % b;
+        a = b;
+        b = remainder;
+    
+    }
+    gcd=a;
+    return gcd;
+}
+int main() {
+    int a=8,b=12;
+    
+    int result =GCD(a,b);
+    printf("%d",result);
+   
+    return 0;
+}

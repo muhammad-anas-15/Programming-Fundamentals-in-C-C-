@@ -1,0 +1,170 @@
+Destructor in C++:
+ 
+ * Destructor is special member function that is executed automatically when an object is destroyed,
+   that has been created by constructor.
+ * Destructors are called automatically whenever an object goes out of scope or is explicitly destroyed using delete or delete[].
+ * Destructor are used to de-allocate memory that has been allocated for object by the compiler. 
+ * Their primary function is to perform cleanup tasks before the object is destroyed, such as releasing memory or closing files.
+ * It is declared with tilde ( ~ ) at the beginning of constructor.
+ * If you do not explicitly provide a destructor, the compiler will create an empty destructor.
+ * Destructors have no return type, not even void.
+
+
+Other Characteristics:
+
+* Complement of the constructor
+* One per class Destructors cannot be overloaded (have multiple definitions with different parameter lists).
+* They are typically declared in the public section of a class for accessibility.
+* Destructors cannot be static or const member functions.
+* Objects of a class with a destructor cannot be members of a union.
+* Destructors are invoked in the reverse order of object creation (Last-In-First-Out).
+
+Default Destructor:
+
+ * If you don't define a destructor for your class, the compiler provides a default one with an empty body,
+   which essentially does nothing.
+ 
+
+Syntax of User Defined Destructor:
+
+     Classname::~Classname() {
+
+                                          }
+
+                 DayofYear::~DayofYear(){
+
+                             cout<<“DayofYear object being destroyed: “<<endl }    
+
+
+Destructor Example: 
+
+       class Rectangle {
+              public:
+              Rectangle(int w=5,int l=10){
+              Width=w; length=l; 
+              cout<<"Rectangle width = "<<width<<" length = "<<length<<endl;
+                }
+          
+              ~Rectangle() {
+               cout<<“Rectangle object being destroyed: “;
+
+
+              private:
+                int width;
+                int length;
+           };
+              int main() {
+
+             Rectangle r1;
+             Rectangle r2(2,40);
+             Rectangle r3(3,60);
+             //Destructors for objects are implicitly called here.
+             }
+
+Output: 
+       Rectangle width = 5 length = 10
+       Rectangle width = 2 length = 40
+       Rectangle width = 3 length = 60
+       Rectangle object being destroyed:
+       Rectangle object being destroyed:
+       Rectangle object being destroyed:
+
+
+Destructor For array of objects:
+
+ * The default constructor must be provided for creating array of objects.
+ * Destructor will be called automatically.
+ * There is no need to call destructor explicitly.
+
+Example:
+        Int main() {
+        Employee Emp[3];//it will create three objects. Only
+        default constructor will be called
+        Emp[0].setID(1);
+        Emp[1].setID(2);
+        Emp[2].setID(3);
+             } //destructors will be called implicitly
+             
+
+Q) When is a destructor called for called for Dynamically
+allocated Object?
+
+  • Destructors shall not be explicitly called.
+  • The destructor DayofYear::~DayofYear() will automatically get called when you
+    delete it using
+                      delete D1;
+  • Remember: 
+             * delete D1 does two things: 
+                                       * it calls the destructor and it deallocates the memory.
+
+Example: 
+
+              DayofYear::~DayofYear(){
+
+                         cout<<“DayofYear object being destroyed: “<<endl }
+
+               main() {
+                      DayofYear *D1 = new DayofYear(10,3,2024);
+                      ...
+                     delete D1; //Automatically calls D1->~DayofYear()
+                      ...
+                       }
+
+Destructor Example: Array of pointers of type rectangle
+
+
+                #include<iostream>
+                using namespace std;
+
+                class Rectangle {
+
+                public:
+                Rectangle(int w=5,int l=10) // Parametrized Constructor.
+                 {
+                    width=w,length=l; // setting values.
+                    cout<<"Rectangle width = "<<width<<" length = "<<length<<endl;
+					}
+
+                ~Rectangle() {// Destructor called
+                 cout<<"Rectangle object being destroyed: "<<endl;}
+
+                 private:
+                     int width;
+                     int length;
+                 };
+
+                int main() 
+                 {
+				 
+                  Rectangle *rec[3];
+                  
+                  for(int i=0;i<3;i++)  
+                  {
+                    rec[i] = new Rectangle(2,5);//invoking constructr for each obj.
+                  }
+                  
+                    cout<<"Enough Rectangles, now going to out of scope: "<<endl;
+                    
+                    
+                    for(int i=0;i<3;i++){
+					
+                    delete rec[i];//destructors for the dynamically allocated objects called here automatically.
+                          }
+                    return 0;
+                }
+
+
+Destructor Example: For dynamically allocated array of objects
+
+                 • The default constructor must be provided for creating array of objects using below method:
+                 • Use delete for deallocating the dynamic array of objects.
+                 • Without using delete, destructors will not be called.
+
+                      Employee *c = new Employee[3];//it will create three
+                      objects. Only default constructor will be called.
+
+                         Emp[0].setID(1);
+                         Emp[1].setID(2);
+                         Emp[2].setID(3);
+
+                         delete [] c; //destructor will call here

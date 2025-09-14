@@ -1,0 +1,17 @@
+OOP in Python:
+
+1) Class
+
+    Syntax:
+                    class class-name:
+                           //member functions
+                           
+
+
+                  object = class-name(parameter)
+                  object.print()
+
+
+2) Constructor:
+
+     * Constructor are used with keyword  "_ _ init _ _ 

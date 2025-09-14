@@ -1,0 +1,169 @@
+This Pointer in C++:
+
+Background:
+
+To understand ‘this’ pointer, it is important to know how objects look at functions and data members of a class.
+
+Each object gets its own copy of the data member.
+All-access the same function definition as present in the code segment.
+Meaning each object gets its own copy of data members and all objects share a single copy of member functions.
+Then now question is that if only one copy of each member function exists and is used by multiple objects, how are the proper data members are accessed and updated?
+The compiler supplies an implicit pointer along with the names of the functions as ‘this’.
+The ‘this’ pointer is passed as a hidden argument to all nonstatic member function calls and is available as a local variable within the body of all nonstatic functions. ‘this’ pointer is not available in static member functions as static member functions can be called without any object (with class name).
+
+
+ * In C++ 'this' is a keyword that is used to represent an object that invokes the member function.
+   It automaticallly points to the object for which the object is being called.
+--> It points to the current instance or object of class.  
+
+ * It can be used to pass current object as a parameter to another method.
+ * It can be used to refer current class instance variable.
+
+--> Syntax for refering instance variable:
+         this->class_variable = value(from function parameter)
+
+--> Syntax for refering current object of class:
+         *this
+
+
+ * "This" keyword represent the address of current instance of class.
+ * The 'this' pointer act as implicit (not in a direct way) parameter to all the member functions and it is automatically 
+   passed to the member function when it is called.
+
+Accessing the executing object using 'this' :
+
+#include<iostream>
+using namespace std;
+class A{
+	public:
+		void display(){
+			cout<<"The address of object: ";
+			cout<<this<<endl;
+		}
+};
+int main()
+{
+	A obj;
+	obj.display();
+	return 0;
+}
+ 
+Features of this Keyword:
+
+* When a member function has parameters or local variables with the same names as member variables, the "this" pointer helps distinguish between them. By 
+   using "this->", you can refer to member variables explicitly, avoiding ambiguity.
+
+ Example:
+
+       class Example {
+            private:
+            int value;
+
+            public:
+            void setValue(int value) {
+            this->value = value; // Assign the parameter value to the member variable
+              }
+           };
+
+
+* Method Changing:
+                  Method changing is very useful feature of this pointer. It helps in changing the methods for ease and cleaner code.
+   Example:
+             obj->set()->replace()->increase()
+
+-> In this each method will return an object and allows the code to be chain together into a single statement.
+
+  Example:
+          #include<iostream>
+          using namespace std;
+          class A{
+	  int a, b;
+	    public:
+		A &set_data(int a, int b)// as reference of function is call
+		{
+			this->a = a;
+			this->b = b;
+			return *this; //so we used pointer to return function to object.
+		}
+		void display(){
+			cout<<"The value of a"<<" "<<"& b is "<<a<<" :"<<b<<endl;
+			//cout<<this<<endl;
+		}
+              };
+
+           int main()
+        {
+	     A obj;
+	     obj.set_data(4,6).display();
+	    return 0;
+           }
+
+ * Using this keyword we can call 1 member function inside other function.
+Example:
+
+        #include<iostream>
+        using namespace std;
+        class A{
+	public:
+		void display(){
+			cout<<"The vowel alphabets are:\n";
+			this->call(); 
+		}
+		void call();
+           };
+        void A::call(){
+	cout<<"A is a vowel:\n";
+	cout<<"E is a vowel:\n";
+	cout<<"I is a vowel:\n";
+	cout<<"O is a vowel:\n";
+	cout<<"U is a vowel:\n";
+	
+         }
+       int main()
+       {
+	A obj;
+	obj.display();
+	return 0;
+         } 
+
+
+
+Important Uses Of 'this' Pointer:
+
+The 'this' pointer in C++ has several applications and uses. Here are some common scenarios where the 'this' pointer is utilized:
+
+1)Distinguishing between local variables and member variables: 
+
+When a member variable has the same name as a local variable or parameter within a member function, the 'this' pointer in C++ allows you to explicitly refer to the member variable. This distinction helps avoid ambiguity and allows you to access or modify the intended member variable.
+
+
+2)Returning the current object from a member function: 
+
+Member functions can return the current object using the 'this' pointer. This enables method chaining, where multiple member functions can be called on the same object in a single expression. It provides a concise and fluent style of programming.
+
+
+3)Accessing member variables and methods within member functions: 
+
+The 'this' pointer provides a way to access and manipulate member variables and member functions within other member functions. It allows for explicit reference to the single object itself, enabling operations on its state or invoking other member functions.
+
+
+4)Passing the current object as a parameter: 
+
+The 'this' pointer in C++ can be passed as a parameter to other functions or methods within a class. This allows those functions to operate on the current object, providing access to its state and behavior.
+
+
+5)Resolving naming conflicts and accessing shadowed variables: 
+
+When there is a naming conflict between member variables and local variables, the C++ 'this' pointer helps resolve the conflict by allowing explicit access to the member variables. It ensures that the intended variables are accessed and modified correctly.
+
+
+6)Callbacks and event handling: 
+
+The 'this' pointer is often used in event-driven programming and callbacks. It allows event handlers or callback functions to access and operate on the object that registered the event or callback.
+
+7)Implementation of copy assignment and copy constructor: 
+
+In the implementation of the copy assignment operator and copy constructor, the C++ 'this' pointer is used to reference the object being assigned or copied from. It helps in correctly copying the state of the object.
+
+
+

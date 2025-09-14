@@ -1,0 +1,18 @@
+
+int calculateTiles(int plot_width, int plot_length, int tile_width, int tile_length)
+{
+    if (tile_width <= 0 || tile_length <= 0 || plot_width <= 0 || plot_length <= 0)
+    {
+        return 0; // Invalid input values, return 0 tiles needed
+    }
+
+    int tiles_needed_width = (plot_width + tile_width - 1) / tile_width;     // Calculate tiles needed in width
+    int tiles_needed_length = (plot_length + tile_length - 1) / tile_length; // Calculate tiles needed in length
+
+    return tiles_needed_width * tiles_needed_length; // Total tiles needed
+}
+
+
+ float money_on_school_supplies();
+float money_on_saving_bonds();
+float money_parents_spends()

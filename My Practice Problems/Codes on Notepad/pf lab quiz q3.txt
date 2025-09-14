@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+
+int main()
+{
+ int d1,d2,d3,d4,d5,1n,sum;
+
+printf("Enter d1:");
+printf("Enter d2:");
+printf("Enter d3:");
+printf("Enter d4:");
+printf("Enter d5:");
+
+scanf("%d",&d1:");
+scanf("%d",&d2:");
+scanf("%d",&d3:");
+scanf("%d",&d4:");
+scanf("%d",&d5:");
+
+n1= d1d2d3d4d5;
+sum=d1+d2+d3+d4+d5;
+
+printf("Sum of 5 digit is %d",sum);
+
+return 0;
+}

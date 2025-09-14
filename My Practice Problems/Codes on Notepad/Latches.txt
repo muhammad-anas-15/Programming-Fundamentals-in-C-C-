@@ -1,0 +1,23 @@
+Latches:
+       --> Latches are digital circuits that store a single bit of information and hold its value until it is updated by new input signals. 
+       --> They are used in digital systems as temporary storage elements to store binary information.
+       --> One can use it to store either 0 or 1 at a specified time.
+       --> A latch contains two inputs- SET and RESET, and it also has two outputs. They complement each other.
+       --> One can use a latch for storing one bit of data. 
+       --> These are sensitive to the input voltage applied and does not depend on the clock pulse. 
+
+Gates Used:
+           Latches can be implemented using various digital logic gates, such as AND, OR, NOT, NAND, and NOR gates.
+
+Applications:
+             Latches are widely used in digital systems for various applications, including data storage, control circuits, and flip-flop
+             circuits. They are often used in combination with other digital circuits to implement sequential circuits, such as state machines
+             and memory elements.
+
+Types of Latches in Digital Electronics
+
+                             1 SR Latches
+                             2 Gated SR Latches 
+                             3 D Latches
+
+further more on : https://www.geeksforgeeks.org/latches-in-digital-logic/

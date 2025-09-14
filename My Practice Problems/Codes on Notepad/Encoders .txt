@@ -1,0 +1,31 @@
+Encoders: 
+
+         1) It is combinational logic circuit.
+         2) It performs reverse operation of decoder.
+         3) Encoder is used to convert an active input signal into coded output signal.
+         4) Encoder has ‘M’ input lines, only one of which is activated at given time,produces an 'N' Bit output cod, depending on which input is
+            activated. 
+         5) Difference between Encoder and Decoder is that Decoder has 'binary code' as an input while Encoder has binary code as output          
+
+
+
+Applications of Encoder:
+      
+        1) Decimal to BCD Encoder
+        2) Octal to Binary Encoder.
+        3) Hexadecimal to Binary Encoder. 
+
+Truth Table of 8 * 3 Encoder:
+
+                            Outputs                 Inputs
+
+                         X    Y    Z          Do   D1   D2   D3   D4   D5   D6   D7
+                         0    0    0          0    1    1    1    1    1    1    1
+                         0    0    1          1    0    1    1    1    1    1    1
+                         0    1    0          1    1    0    1    1    1    1    1 
+                         0    1    1          1    1    1    1    1    1    1    1    
+                         1    0    0          1    1    1    0    1    1    1    1    
+                         1    0    1          1    1    1    1    0    1    1    1   
+                         1    1    0          1    1    1    1    1    0    1    1
+                         1    1    1          1    1    1    1    1    1    0    1
+

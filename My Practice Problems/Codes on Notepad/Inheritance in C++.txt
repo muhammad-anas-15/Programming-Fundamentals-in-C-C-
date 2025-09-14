@@ -1,0 +1,60 @@
+Inheritance in C++:
+
+  * Inheritance is a fundamental concept in object-oriented programming (OOP), including C++. 
+    It allows a class to inherit properties (data members and member functions) from another class, called the base class or parent class. 
+
+ * It helps in reusability of code, we can reuse class and add additional features to it, reusing class save money and time.
+   Reusing already tested and debugged class will save a lot of effort of developing and debugging the same thing again. 
+   
+What is inheritance in C++:
+
+   • The concept of reusability in C++ is supported through inheritance.
+   • We can use the properties of existing class by inheriting from it.
+   • The existing class is called "Base class" / "Parent class" / "Super class".
+   • The new class which is inherited is called "Derived Class" / "Child class" / "Sub class".
+
+Types of Inheritance:
+
+ 1) Single Inheritance
+ 2) Multilevel Inheritance
+ 3) Multiple Inheritance
+ 4) Hierarchical Inheritance
+ 5) Hybrid Inheritance
+
+
+1) Single Inheritance:
+  
+  • When there is 1 base class and 1 derived class. 
+                      class A -------> class B
+         ( Base )        ( Derived ) 
+   arrow inticates that 'B' is derived from 'A' 
+
+Example :
+        
+                                                                              // Derived class inheriting from Shape
+class Shape {                                                                    class Rectangle : public Shape {
+protected:                                                                       public:
+    int width;                                                                   Rectangle(int w, int h) : Shape(w, h) {}
+    int height;                                                                  int area() {
+                                                                                 return width * height;
+public:
+    Shape(int w, int h) : width(w), height(h) {}                                 }
+                                                                                  };
+    void setWidth(int w) {
+        width = w;
+    }
+
+    void setHeight(int h) {
+        height = h;
+    }
+};
+
+int main() {
+    Rectangle rect(5, 4);
+    std::cout << "Area of rectangle: " << rect.area() << std::endl;
+
+    return 0;
+}
+
+2) 
+ 

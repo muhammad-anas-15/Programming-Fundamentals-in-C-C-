@@ -1,0 +1,72 @@
+Lines in 3D space.
+
+***Equation of line and Vector Parallel to it***
+
+1) Find vector,parametric,symmetric equation for the line passes through the point (x,y,z) and parallel to vector ai-2j+5k.
+
+In such questions we have some points and a vector .
+If we have two points Po(xo,yo,zo) P(x1,y1,z1) first we find V=P1-Po and for ro we take first point Po.
+
+Sol:
+   * A Line is define by two things. 1)We need point on a line. 2)Direction of a Line.
+
+***Vector Equqtion: 
+    r =ro + a  : a = tv          normal vector(r) = sum of both vectors or it's vector sum by head to tail rule. 
+       ro = <Xo,Yo,Zo>     :  v (a,b,c)  : ro is a position vector
+
+***Parametric Equation:
+                             x = x0 +at,   y = yo+bt,   z = zo+ct
+
+***Symmetric Equations:
+                             x - xo /a = y - yo/b = z -zo/c
+
+
+***Equation of line and Vector Perpendicular to it***
+
+In case of point lie on a plane and a vector perpendicular to it. first we draw a normal vector(ro) for origin O to that point. now draw another vecor(r) from origin. now (ro-r) is equal to another vector which is perperndicular to normal vector(n).
+                    n . (r-ro) = 0 ---> eq (i)
+               n = <a,b,c> , r =(x,y,z) ----> P   , ro = (xo,yo,zo) -----> Po   put these values in equation (i)
+      so,    
+              a(x-xo)+b(y-yo)+c(z-zo)  = 0      Equation of a plane given a point and perpendicular normal vector
+                 ax + by + cz +d =0     ------> Equation of linear equation in three variables a,b,c represent a plane   
+
+
+
+
+
+
+***Skew Lines***
+
+If we have parametric equations of two line segment L1 & L2 and we have to find that they are skew line?
+So first we compare t values of l1 as t(x,y,z)   and s  s(x,y,z) and put these values of x,y,z in both lines segment and compare values of 't' and 's' if they are equal than they are skew lines or else not.
+
+
+***Equation of a Plane Given Three Points***
+1) First we have to find normal vector(n) which is perpendicular to plane and then put variables of A(x,y,z) in n.
+    for this we take 3 points as A , B , C
+    now distance between these points as distance between A&B is equal to vector 'a'. distance between A&C is equal to vector 'b'. 
+    cross product of a×b=n gives us normal vector  n(a,b,c).
+    put all these values in equation:
+                                      a(x-xo)+b(y-yo)+c(z-zo)  = 0
+
+
+
+***Point at which the line with parametric equations intersect the plane ax+by+cz=d***
+1) Put all parametric equations in plane and we get value of 't'.
+2) Put this value of t in all parametric equations.
+3) We get point of intersection(x,y,z).
+
+
+
+***Angle between two planes***
+1) Plane 1 normal vector(n1),Plane 2 normal vector(n2).
+2) n1(x1,y1,z1)---> Plane1
+3) n2(x2,y2,z2)---> Plane2
+4) First we have two find angle between normal vectors :
+                                                        cosθ = n1 .n2 / |n1| |n2|
+so n1.n2 = x1(x2)+y1(y2)+z1(z2)
+  |n1| = √ (x1)^2 +(y1)^2 +(z1)^2
+  |n2| = √ (x2)^2 +(y2)^2 +(z2)^2
+   
+
+                             

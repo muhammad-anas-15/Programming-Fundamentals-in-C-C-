@@ -1,0 +1,52 @@
+Private Inheritance:
+                    When a class inherits privately from another class, the public and protected members of the base class become private members of the derived class. This means that while the derived class can still access the inherited members, those members are treated as private within the derived class and are not accessible from outside the class or its derived classes.
+
+Example:
+
+#include <iostream>
+using namespace std;
+// Base class
+class Base {
+public:
+    void publicFunction() {
+        cout << "Public function of Base class" << endl;
+    }
+
+    void protectedFunction() {
+        cout << "Protected function of Base class" << endl;
+    }
+
+    void privateFunction() {
+        cout << "Private function of Base class" << endl;
+    }
+};
+
+// Derived class privately inherits from Base
+class Derived : private Base {
+public:
+    void accessBaseMembers() {
+        // Public members of Base can be accessed directly from Derived
+        publicFunction();
+
+        // Protected members of Base can be accessed directly from Derived
+        protectedFunction();
+
+        // Private members of Base are also inherited, but treated as private in Derived
+        // So, we can access them within Derived, but not from outside
+        privateFunction();
+    }
+};
+
+int main() {
+    Derived derivedObj;
+    
+    // Accessing public and protected members of Base through Derived object
+    derivedObj.accessBaseMembers();
+
+    // We cannot access the inherited members from outside the class
+    // derivedObj.publicFunction(); // This would result in a compile-time error
+    // derivedObj.protectedFunction(); // This would also result in a compile-time error
+    // derivedObj.privateFunction(); // This would result in a compile-time error
+
+    return 0;
+}

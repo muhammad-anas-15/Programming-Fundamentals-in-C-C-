@@ -1,0 +1,134 @@
+Conditional Operators In Python:
+
+1) If statement
+
+ Syntax:
+    
+       if condition :
+          //
+          //statements
+
+  * Each thing that happens gets its own line. And each line is indented (means space under if keyword).
+    e.g:
+         1 if number_of_husbands == 1:
+             print("So far so good.")
+             print("Congratulations.")
+             print("All done")
+
+2) Else statement
+
+ Syntax:
+       
+       else:
+          //
+          //Statements
+   
+
+3) Else If statement
+
+ Syntax:
+       
+       elif condition :
+          //
+          //Statements
+
+      e.g:
+           if donut_condition == "fresh":
+             buy_score += 10
+           elif donut_filling == "chocolate":
+             buy_score += 5
+           elif donut_price == "reasonable":
+             buy_score += 7
+           else:
+             print("Buy")
+
+   
+4) Ternary Operator:
+                   
+     * The ternary operator is useful in cases where we need to assign a value to a variable based on a simple condition, and we want to keep our
+       code more concise — all in just one line of code.
+
+    * Match case can be used in following ways:
+
+                                              1) Simple Match Case Statement
+                                              2) Match Case Statement with OR Operator
+                                              3) Match Case Statement with Python If Condition
+                                              4) Match Case with the Sequence Pattern
+                                              5) Match Case Statement with Python Dictionary
+                                              6) Match Case Statement with Python Class
+
+  Syntax:   
+                                 true_value if condition else false_value
+
+Example:
+                                  # Program to demonstrate ternary operator
+                                    a = 10
+                                    b = 20
+
+                               # python ternary operator
+                              min = "a is minimum" if a < b else "b is minimum"
+
+                               print(min)
+
+
+   * The ternary operator can also be used in Python nested if-else statement.
+
+ Syntax:
+                             true_value  if condition1 else (true_value if condition2  else false_value)
+
+Example: 
+                            # Python program to demonstrate nested ternary operator
+                             a = 10
+                             b = 20
+
+                             print("Both are equal"        if a == b     else "a is greater"        if a > b           else "b is greater")
+
+
+5) Switch Case / Match Case:
+
+         * This Match Case is the Switch Case of Python which was introduced in Python 3.10.
+
+
+  Syntax:
+
+                match parameter:
+
+                                         case pattern1:
+                                                                  # code for pattern 1
+
+                                        case pattern2:
+                                                                # code for pattern 2
+                                                   .
+                                                   .
+                                       case patterN:
+                                                             # code for pattern N
+                                       case _:
+                                                            # default code block
+
+Example:
+                   # simple match case statement
+                  def runMatch():
+                                         num = int(input("Enter a number between 1 and 3: "))
+    
+                   # match case
+                    match num:
+                                         # pattern 1
+                                         case 1:
+                                                     print("One")
+
+                                       # pattern 2
+                                        case 2:
+                                                   print("Two")
+
+                                      # pattern 3
+                                         case 3:
+                                                 print("Three")
+
+                                     # default pattern
+                                        case _:
+                                                print("Number not between 1 and 3")
+            
+              runMatch()
+
+
+

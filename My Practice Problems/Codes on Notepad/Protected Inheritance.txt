@@ -1,0 +1,65 @@
+Protected Inheritance:
+                      When a class inherits protectedly from another class, the public and protected members of the base class become protected members of the derived class. This means that the derived class and its derived classes can access these inherited members, but they are not accessible from outside the class hierarchy.
+
+Example:
+        #include <iostream>
+using namespace std;
+// Base class
+class Base {
+public:
+    void publicFunction() {
+        cout << "Public function of Base class" << endl;
+    }
+
+protected:
+    void protectedFunction() {
+        cout << "Protected function of Base class" << endl;
+    }
+
+private:
+    void privateFunction() {
+        cout << "Private function of Base class" << endl;
+    }
+};
+
+// Derived class protectedly inherits from Base
+class Derived : protected Base {
+public:
+    void accessBaseMembers() {
+        // Public members of Base can be accessed directly from Derived
+        publicFunction();
+
+        // Protected members of Base can be accessed directly from Derived
+        protectedFunction();
+
+        // Private members of Base are inherited, but not accessible from Derived
+        // privateFunction(); // This would result in a compile-time error
+    }
+};
+
+// Further derived class
+class FurtherDerived : public Derived {
+public:
+    void accessBaseMembers() {
+        // Public and protected members of Base are inherited by FurtherDerived
+        publicFunction();
+        protectedFunction();
+
+        // Private members of Base are not accessible from FurtherDerived
+        // privateFunction(); // This would result in a compile-time error
+    }
+};
+
+int main() {
+    Derived derivedObj;
+
+    // Accessing public and protected members of Base through Derived object
+    derivedObj.accessBaseMembers();
+
+    // We cannot access the inherited members from outside the class
+    // derivedObj.publicFunction(); // This would result in a compile-time error
+    // derivedObj.protectedFunction(); // This would also result in a compile-time error
+    // derivedObj.privateFunction(); // This would result in a compile-time error
+
+    return 0;
+}

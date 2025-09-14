@@ -1,0 +1,106 @@
+Recursion Problems:
+
+
+Q1) Factorial of any number using recursion
+
+Code:
+ #include<stdio.h>
+ int factorial(int n)
+  {
+       if (n==1)
+      {
+          return 1;
+      }
+      return n*factorial(n-1);
+       
+  }
+ int main()
+ {
+     int n;
+     printf("Enter number:");
+     scanf("%d",&n);
+     int a= factorial(n);
+     printf("%d", a);
+     return 0;
+ }
+  
+
+Printing Hello World using Recursion:
+
+Code:
+#include <stdio.h>
+void fun(int n)
+{ 
+    if (n==0)
+    {
+        return 0;
+    } 
+    else
+    {
+    printf("hello world\n");
+    fun(n-1);
+    
+}
+return;
+}
+int main() {
+    int n;
+    printf("Enter number:");
+    scanf("%d",&n);
+    fun(n);
+    
+    return 0;
+}
+
+Sum upto n using Recursion:
+
+Code:
+ #include<stdio.h>
+ void sum(int n, int s)
+  {
+       if (n==0)
+      {
+          printf("Sum is =%d",s);
+          return;
+      }
+      sum(n-1, s+n);
+      return;
+  
+  }
+ int main()
+ {
+     int n;
+     printf("Enter number:");
+     scanf("%d",&n);
+     sum(n,0)  ;
+      
+     return 0;
+ }
+
+Q) calculating power using recursion
+
+Code:
+#include<stdio.h>
+int power(int a, int b);
+int main()
+{
+    int a,b;
+    printf("Enter value of a:");
+    scanf("%d",&a);
+    printf("Enter value of b:");
+    scanf("%d",&b);
+    
+    int j = power(a,b);
+    
+    printf("Power is %d", j);
+}
+int power(int a, int b)
+{
+   if (b==0)
+   {
+       return 1;
+   }
+    int p = a*power(a,b-1);
+    return p;
+}
+  

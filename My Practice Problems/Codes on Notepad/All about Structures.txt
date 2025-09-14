@@ -1,0 +1,197 @@
+Structures:
+
+ * A structure is a user-defined data type in C/C++. A structure creates a data type that can be used
+   to group items of possibly different types into a single type.
+ * The ‘struct’ keyword is used to create a structure. 
+
+ Syntax:
+             struct structureName{
+                   member1;
+                   member2;
+                   member3;
+                   .
+                   .
+                   .
+                   memberN;
+                   };
+
+Structures in C++ can contain two types of members:  
+
+1) Data Member: 
+           These members are normal C++ variables. We can create a structure with variables of
+           different data types in C++.
+
+2) Member Functions: 
+          These members are normal C++ functions. Along with variables, we can also include 
+          functions inside a structure declaration.
+
+
+3) Structure Pointer:
+            struct data{
+                            int x,y;};
+       int main(){
+               data d1;
+               data *ptr;
+                ptr =  &d1;
+       cout<<ptr->x<<ptr->y<<endl;
+       cout<<(*ptr).x   <<(*ptr).y;
+
+
+
+4) Nested Structure:
+       * Structure within structure.
+       * A nested structure is created when memeber of structure is itself a structure.
+
+
+struct addr
+{
+   int houseno;
+   string area;
+   string city;
+   string state;
+};
+struct emp
+{
+   int id ;
+   string name;
+   addr address;            // complex element
+   float basic;
+};
+    emp e1;
+    el.id;
+    el.address.area
+    
+
+    * The members of structures are accessed using the dot operator. 
+    * To access the "address" member of the "emp" structure, which is a variable of another structure, "addr", we shall write:   ".address.houseno"
+
+                                                                                        
+5) C++ Structure and Function:
+
+Ways to pass structure: 
+
+        * If the structure itself is an argument, then it is called "call by value". 
+        * If the reference of the structure is passed as an argument then it is called "call by reference".
+
+ 1) Call by value
+ 2) Call by reference
+
+* 1. Call by value: 
+ 
+#include <iostream>
+using namespace std;
+struct Employee{
+    char name[50];
+    int age;
+};
+void printData(Employee p){
+    cout << "\nDisplaying Information." << endl;
+    cout << "Name: " << p.name << endl;
+    cout <<"Age: " << p.age << endl;
+}  
+int main(){
+    Employee p;                                                    
+    cout << "Enter Full name: ";
+    cin.get(p.name, 50);
+    cout << "Enter age: ";
+    cin >> p.age;
+                                                                      
+    // Function call with structure variable as an argument
+    printData(p);                                                                
+    return 0;
+}
+
+
+ * Returning structure from function:
+
+#include <iostream>
+using namespace std;
+struct Employee {
+    char name[50];
+    int age;
+};
+Employee getData(Employee); 
+void printData(Employee); 
+
+int main(){
+    Employee p;
+    p = getData(p);   
+    printData(p);
+
+    return 0;
+}
+
+Employee getData(Employee p) {
+    cout << "Enter Full name: ";
+    cin.get(p.name, 50);
+
+    cout << "Enter age: ";
+    cin >> p.age;
+                                                      
+    return p;
+}
+
+void printData(Employee p){
+    cout << "\nDisplaying Information." << endl;
+    cout << "Name: " << p.name << endl;
+    cout <<"Age: " << p.age << endl;
+    cout << "Salary: " << p.salary;
+}
+
+
+6) Passing Structure members as a Function:
+
+   * We can pass individual members to a function just like ordinary variables.
+
+7) Passing Structure Variables as Parameters:
+   
+   * Unlike arrays, the name of structure variable is not a pointer.
+   * So when we pass a structure variable to a function, the formal argument of print_struct() is 
+     assigned a copy of the original structure. Both structures reside in different memory 
+     locations and hence they are completely independent of each other.
+   * Any changes made by function print_struct() doesn't affect the original structure variable in 
+     the main() function.
+
+
+8) Pointers to structure variables:
+ 
+  * Pointers of structure variables can be declared like pointers to any basic data type
+
+                          Student csstudent, *ptrstudent;
+                          ptrstudent = &csstudent;
+
+  * To access the member of the struct using pointer to struct, we can use (.) operator by first dereferencing the pointer, for example
+                         
+                          (*ptrstudent).roll_number;
+  
+  * Alternatively, members of a pointer structure type variable can be accessed using arrow (->) operator.
+               
+                          ptrstudent-> roll_number=20; //alternate: (*ptrstudent).roll_number;
+                          strcpy( ptrstudent->Name, “Ali”);
+ 
+  * Members of the structure variables can be accessed directly or indirectly via pointer.
+                          
+                         cout<<"Name: "<< csstudent.name<<endl<<ptrstudent->rollnumber;
+                         cout<<"Roll no: "<< csstudent.roll_no<<endl<<ptrstudent->Name;
+
+
+9) Passing structure variables as pointers:
+
+
+10) Dynamic Memory Allocation (DMA) of Structure Type Variables:
+  
+   * We can also dynamically allocate the memory of any structure type variable using new operator.
+        
+                           Student *ptrstudent;
+                           ptrstudent = new Student;
+
+
+
+
+
+                         
+
+
+
+
+                                     

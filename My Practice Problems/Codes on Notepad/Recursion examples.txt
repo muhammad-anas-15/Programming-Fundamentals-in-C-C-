@@ -1,0 +1,324 @@
+Recursion examples
+
+1)Sum upto n terms
+
+Code:
+
+
+#include <stdio.h>
+int sum_of (int n);
+int main() {
+     int sum,n,j;
+     printf("Enter n:");
+     scanf("%d",&n);
+     
+     int sum_of( int n);
+    printf("Sum is =%d",sum_of(n));
+     
+}
+int sum_of (int n)
+{
+    if (n==0)
+    {
+        return 1;
+    }
+    return n+sum_of(n-1);
+}
+
+
+2) Sum of all even numbers upto n
+
+Code:
+#include <stdio.h>
+int sum_of (int n);
+int main() {
+     int sum,n,j;
+     printf("Enter n:");
+     scanf("%d",&n);
+     
+     int sum_of( int n);
+    printf("Sum is =%d",sum_of(n));
+     
+}
+int sum_of (int n)
+{
+    if (n==0)
+    {
+        return 0;
+    } 
+    return n+sum_of(n-2);
+    
+}
+
+3) Fibnoci Series
+
+Code:
+
+#include <stdio.h>
+int fibnoci (int n);
+int main() {
+     int sum,n,j;
+     printf("Enter n:");
+     scanf("%d",&n);
+     for (int i=0; i<=n ;i++)
+     {
+      fibnoci(i);
+    printf("Series is =%d\n",fibnoci(i));
+     }
+}
+int fibnoci (int n)
+{
+    if (n==0)
+    {
+        return 0;
+    } 
+    else if (n==1)
+    {
+        return 1;
+    }
+    
+    return  fibnoci(n-1)+fibnoci(n-2);
+    
+}
+
+4)Sum of digits of a number
+
+Code:
+#include <stdio.h>
+int sum_of_digits (int n);
+int main() {
+     int sum,n,j;
+     printf("Enter n:");
+     scanf("%d",&n);
+      
+      sum_of_digits (n);
+    printf("Sum of digits is =%d\n",sum_of_digits(n));
+
+}
+int sum_of_digits (int n)
+{
+    if (n==0)
+    {
+        return 0;
+    } 
+     
+    
+    return   ((n%10)+sum_of_digits (n/10));
+    
+}
+
+5) Reverse of a number
+
+Code:
+#include <stdio.h>
+#include<math.h>
+int revese_of_number (int n, int l);
+int main() {
+     int  n,temp,l=0;
+     printf("Enter n:");
+     scanf("%d",&n);
+     temp =n;
+     
+     while (temp!=0)
+     {
+         l++;
+         temp =temp/10;
+     }
+     
+      int k=revese_of_number (n,l);
+    printf("Reverse of number is =%d\n",k);
+
+}
+int revese_of_number (int n, int l)
+{
+    if (n==0)
+    {
+        return n;
+    } 
+     
+    
+    return   (((n %10) * pow(10 ,l-1)) + revese_of_number (n/10 ,--l));
+    
+}
+
+6)sum of squares of natural numbers
+
+Code:
+#include <stdio.h>
+ 
+int sum (int n);
+int main() {
+     int  n,temp,l=0;
+     printf("Enter n:");
+     scanf("%d",&n);
+      
+     sum (n);
+    printf("Sum of square of numbers upto n is =%d\n",sum (n));
+
+}
+int sum (int n)
+{
+     if (n==1)
+     {
+         return 1;
+     }
+    return n * n+sum(n-1);
+
+    
+}
+
+7) Number is armstrong
+
+Code:
+#include <stdio.h>
+#include <math.h>
+
+int armstrong_of_number(int n, int l);
+
+int main() {
+    int n, temp, l = 0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    temp = n; // Save the original value of n
+
+    while (temp != 0) {
+        l++;
+        temp = temp / 10;
+    }
+
+    int k = armstrong_of_number(n, l);
+
+    if (n == k) {
+        printf("It is an Armstrong number.\n");
+    } else {
+        printf("It is not an Armstrong number.\n");
+    }
+
+    return 0;
+}
+
+int armstrong_of_number(int n, int l) {
+    if (n == 0) {
+        return 0;
+    }
+
+    return pow(n % 10, l) + armstrong_of_number(n / 10, l);
+}
+
+8) Reverse of n numbers and their Sum
+
+Code:
+#include <stdio.h>
+ 
+int sum (int n);
+int main() {
+     int  n,temp,l=0;
+     printf("Enter n:");
+     scanf("%d",&n);
+      
+     sum (n);
+    printf("Sum of square of numbers upto n is =%d\n",sum (n));
+
+}
+int sum (int n)
+{
+     if (n==0)
+     {
+         return 0;
+     }
+     else
+     {
+         printf("\n%d",n);
+         
+      
+    return n +sum(n-1);
+
+     }
+}
+
+
+9) Table of any number
+
+Code:
+#include <stdio.h>
+ 
+int table (int n, int i);
+int main() {
+     int  n,i=1;
+     printf("Enter n:");
+     scanf("%d",&n);
+      
+     table (n,i);
+     
+
+}
+int table (int n, int i)
+{
+     if (i==11)
+     {
+         return;
+     }
+     else
+     {
+         printf("\n%d*%d=%d",n,i,n*i);
+         return n +table(n,i+1);
+     }
+     
+}
+
+10) Power of any number
+
+Code:
+#include<stdio.h>
+int power(int b, int e);
+int main()
+{
+    int b,e;
+    printf("Enter base:");
+    scanf("%d",&b);
+    printf("Enter exponent:");
+    scanf("%d",&e  );
+    
+    power(b,e);
+    printf("Power of %d to %d is %d",b,e,power(b,e));
+}
+int power(int b, int e)
+{
+    if (e==0)
+    {
+        return 1;
+    }
+     return b * power(b , e-1);
+}
+
+11)GCD of 2 numbers
+
+Code:
+ #include<stdio.h>
+ int GCD(int a, int b);
+ int main()
+ {
+     int a,b;
+     printf("Enter value of a:");
+     scanf("%d",&a);
+     printf("Enter value of b:");
+     scanf("%d",&b);
+     
+     GCD(a,b);
+     printf("GCD is %d",GCD(a,b));
+ }
+int GCD(int a, int b)
+{
+    if (a!=b)
+    {
+        if (a>b)
+        {
+            return GCD(a-b,b);
+        }
+        else
+        {
+         return GCD(a,b-a);   
+        }
+    }
+}

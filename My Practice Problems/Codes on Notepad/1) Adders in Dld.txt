@@ -1,0 +1,55 @@
+ 1) Adders:
+           "An adder is a digital logic circuit in electronics that is extensively used for the addition of numbers."
+
+   a) Half Adder: (2 bit system, 4 combinations)
+                 The half adder circuit has two inputs: A and B, which add two input digits and generates two Outputs
+                    i) carry     ii) sum.
+
+      Logic Diagram:
+                    To perform the sum operation, XOR is applied to both the inputs, --> Sum= A XOR B
+                    and AND gate is applied to both inputs to produce carry.         --> Carry = A AND B
+
+      Boolean Expression:
+
+      1) Sum(S) = A'B + AB'/(A⊕B)--> the sum output is 1 only if the input variables, A and B, are not equal, can be expressed as the exclusive-OR of  A,B.
+      2) Carry(Cout) = A.B --> the output carry (Cout) is 1 only when both inputs are 1s,therefore, Cout can be expressed as the AND of A and B.
+
+
+
+      Truth Table: 
+
+                           Inputs                                      Outputs
+                       A           B                               Sum          Carry
+                       0           0                                0             0
+                       0           1                                1             0
+                       1           0                                1             0
+                       1           1                                0             1
+
+
+     b) Full Adder: (3 bit system, 9 combinations)
+                   The full-adder has three inputs, first two inputs are A and B and the third input is an input carry as C-IN and two outputs Sum and  
+                   Carry, whereas half adder has only two inputs and two outputs.
+
+     Logic Diagram:
+                   To perform the sum operation, XOR is applied to three inputs, --> Sum = A XOR B XOR Cin.
+
+     Boolean Expression:
+                 
+            1) Sum is  S = (A⊕B⊕Cin) 
+            2) Carry is Cout = AB + (A ⊕ B)Cin   --> two half-adders, connected
+
+      Truth Table: 
+
+                             Inputs                                         Outputs
+                       A           B       Cin                         Sum          Carry
+                       0           0        0                           0             0
+                       0           0        1                           1             0
+                       0           1        0                           1             0
+                       0           1        1                           0             1
+                       1           0        0                           1             0
+                       1           0        1                           0             1
+                       1           1        0                           0             1
+                       1           1        0                           1             1
+
+                   
+               

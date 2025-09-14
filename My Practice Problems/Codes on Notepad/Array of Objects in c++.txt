@@ -1,0 +1,49 @@
+Array of Object:
+
+ * There are 2 concepts      1) Object of Arrays                     2) Array of Object
+
+1) Object of Arrays:
+
+ * Simply if you have a data member array in class and then you create object of class then object contain array is called object of array:
+ 
+                 class data{
+                                int array[10];
+
+                       };
+                              data d1; // d1 contain array[10] of 10 integers.     d1{ array[10]}
+
+ * Stores multiple arrays as properties within a single object.
+ * Each array holds a collection of related items.
+ * Access arrays using property names on the object and then access elements within the arrays using their index.
+
+ * Use an object of arrays when you have multiple, categorized lists.
+   Example: 
+         User preferences storing favorite colors and fruits.
+  
+          const data = {
+                       colors: ["red", "green", "blue"],
+                       fruits: ["apple", "banana", "orange"]
+                       };
+   
+                        console.log(data.colors[2]); // Outputs "blue"
+
+
+2) Array of Objects:
+ 
+* Simply object is itself an array .  // d1[10]. 
+* Stores multiple objects within a single array.
+* Each object represents a distinct entity with its own properties (key-value pairs).
+* Access elements using their index within the array and then access object properties using dot notation or bracket notation.
+
+* Use an array of objects when you have a collection of items with unique properties.
+  Example: 
+          A list of students with information like name, age, and grades.
+
+          const students = [
+                         { name: "Alice", age: 20 },
+                         { name: "Bob", age: 22 },
+                         { name: "Charlie", age: 18 }
+                           ];
+
+                           console.log(students[1].name); // Outputs "Bob"
+

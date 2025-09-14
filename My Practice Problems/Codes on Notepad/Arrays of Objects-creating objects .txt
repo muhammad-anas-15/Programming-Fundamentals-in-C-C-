@@ -1,0 +1,93 @@
+Arrays of Objects-creating objects dynamically:
+
+Q) Why we need to dynamically allocate array of objects ?
+
+ * Dynamically allocating arrays allows you to specify the size of the array at runtime.
+   This is useful when the size of the array is not known at compile time or when it needs
+   to change dynamically based on program input or runtime conditions.
+
+ * You use the new keyword to dynamically allocate memory for an array of objects on the heap. 
+   The general syntax for allocating an array of objects is:
+
+   Syntax:                             ClassName *arrayName = new ClassName[size];
+
+ * After allocating memory, you may need to initialize each object in the array. 
+   This can be done using a loop or any other method you prefer.
+
+   for (int i = 0; i < size; ++i) {
+    // Initialize each object in the array
+    arrayName[i] = ClassName(/* constructor arguments */); // Here, ClassName(/* constructor arguments */) is used to initialize each object in the array.
+   }
+ 
+ * You access individual elements of the array using the array indexing ([]) operator, just like with static arrays. For example:
+       // Accessing the ith element of the array
+            ClassName obj = arrayName[i];
+
+
+ * After you're done using the dynamically allocated array, you must release the memory to avoid memory leaks.
+    Use the delete[] operator to delete the entire array:
+   
+    delete[] arrayName;
+
+
+ Example:
+ 
+#include<iostream>
+using namespace std;
+
+class Student{
+	public:
+	string name;
+	int age;
+	   
+};
+void Print_Details(Student* student, int s)
+    {
+    	for(int i=0; i<s; i++)
+    	{
+		
+    	cout<<"Student "<<i+1;
+    	cout<<"Name: "<<student[i].name<<endl;
+    	cout<<"Age: "<<student[i].name<<endl;
+    	cout<<endl;
+}
+}
+int main()
+{
+	int size;
+	cout<<"Enter size of array: ";
+	cin>>size;
+	
+	Student* S1 = new Student[size];
+	
+	for(int i=0 ; i<size ;i++){
+		Student s;
+		cout<<"Student "<<i+1<<endl;
+		cout<<" Name:";
+		cin.ignore();
+		getline(cin,s.name);
+		cout<<"Age: ";
+		cin>>s.age;
+		cout<<endl;
+		S1[i]= s;
+	}
+	 Print_Details(S1,size);
+	delete[]S1;
+}
+
+Output:
+
+Enter size of array: 2
+Student 1 Name:Anas
+Age: 20
+
+Student 2 Name:Ali
+Age: 19
+
+Student 1Name: Anas
+Age: Anas
+
+Student 2Name: Ali
+Age: Ali
+
+

@@ -1,0 +1,47 @@
+De- Multiplexer:
+  
+      1) De-multiplexer is also a device with one input and multiple output lines. It is used to send a signal to one of the many devices. 
+         The main difference between a multiplexer and a de-multiplexer is that a multiplexer takes two or more signals and encodes them on
+          a wire, whereas a de-multiplexer does reverse to what the multiplexer does.
+
+
+Types of Demultiplexer
+                      Demultiplexers are classified into four types
+
+                      1-2 demultiplexer  (1 select line)
+                      1-4 demultiplexer  (2 select lines)
+                      1-8 demultiplexer  (3 select lines)
+                      1-16 demultiplexer (4 select lines)
+
+1) 1 X 4 Demultiplexer:
+                       1x4 De-Multiplexer has one input I, two selection lines, s₁ & so and four outputs Y3, Y2, Y1 &Y0.
+
+  Truth Table:
+                         Selection Lines                   Output 
+                        S1         So                   Yo   Y1   Y2   Y3
+                         0          0                    1    0    0    0    
+                         0          1                    0    1    0    0
+                         1          0                    0    0    1    0
+                         1          1                    0    0    0    1
+
+So therfore , Boolean Expression for each output is.
+
+                              Yo = S1'So' , Y1 = S1'So , Y2 = S1'So , Y3 = S1So 
+
+2) 1 X 8 De-multiplexer:
+                         1x8 De-Multiplexer has one input I, three selection lines,s2, s₁ & so and seven outputs Y7, Y6, Y5 Y4, Y3, Y2 Y &Yo.
+
+  Truth Table:
+                   
+                               Selection Lines                   Output 
+                        So         S1      S2                Yo   Y1   Y2   Y3   Y4   Y5    Y6   Y7
+                         0          0      0                 1    0    0    0    0    0     0    0
+                         0          0      1                 0    1    0    0    0    0     0    0
+                         0          1      0                 0    0    1    0    0    0     0    0
+                         0          1      1                 0    0    0    1    0    0     0    0
+                         1          0      0                 0    0    0    0    1    0     0    0
+                         1          0      1                 0    0    0    0    0    1     0    0
+                         1          1      0                 0    0    0    0    0    0     1    0
+                         1          1      1                 0    0    0    0    0    0     0    1
+
+

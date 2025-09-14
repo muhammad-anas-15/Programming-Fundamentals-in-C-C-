@@ -1,0 +1,2 @@
+Jasper Chat is part of the Jasper app, a suite of AI tools made for content creators. Of the ChatGPT alternatives, this tool is a friendly AI chatbot, designed to answer questions and respond to requests.
+One of ChatGPT's biggest competitors in the market is Google Bard, an AI-driven chatbot launched in March 2023 that uses training data taken from across the web to inform its responses. Bard was originally built on language models for dialogue applications (LAMDA) and now includes Google's next-generation LLM PaLM 2.

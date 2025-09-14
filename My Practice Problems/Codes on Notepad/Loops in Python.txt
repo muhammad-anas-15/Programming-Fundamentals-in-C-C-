@@ -1,0 +1,108 @@
+Loops in Python:
+ 
+1) For Loop:
+
+    --> Syntax:
+                                    for variable_name("i")  in range(value till loop executes) :
+                                                 // statements
+
+Example 1:
+                      
+           * The loop assigns each character to the variable i and continues until all characters in the string have been processed.
+      
+            # Iterating over a String
+                print("String Iteration")
+                s = "Geeks"
+
+                 for i in s:
+                       print(i)
+
+
+           Output:
+                           G
+                           e
+                           e
+                           k
+                           s
+
+--> Python for loop with Range:
+ 
+         * This code uses a Python for loop with index in conjunction with the range() function to generate a sequence of numbers starting from 0, up to (but not including) 10.
+
+             for i in range(0, 10):
+                        print(i)
+
+
+--> Python for loop Enumerate:
+  
+       * The enumerate() function is used with the for loop to iterate over an iterable while also keeping track of the index of each item.
+
+           l1 = ["eat", "sleep", "repeat"]
+
+           for count, ele in enumerate(l1):
+                  print (count, ele)
+
+--> Nested For Loops in Python:
+
+         for i in range(1, 4):
+               for j in range(1, 4):
+                      print(i, j)
+
+
+
+--> Python For Loop Over List;
+
+         # Python program to illustrate Iterating over a list
+              l = ["geeks", "for", "geeks"]
+
+                  for i in l:
+                       print(i)
+
+
+--> Python For Loop with Dictionary:
+ 
+        # Iterating over dictionary
+           print("Dictionary Iteration")
+           d = dict()
+
+          d['xyz'] = 123
+          d['abc'] = 345
+
+         for i in d:
+            print("% s % d" % (i, d[i]))
+
+     Output:
+
+          Dictionary Iteration
+         xyz  123
+         abc  345
+
+
+--> Python For Loop with Tuple:
+
+      t = ((1, 2), (3, 4), (5, 6))
+      for a, b in t:
+            print(a, b)
+
+
+--> Python for loop in One Line:
+
+      Numbers =[x for x in range(11)]
+          print(Numbers)
+
+
+
+2) While Loop:
+
+   * The main difference between Python "for-Loop" and  "while-loop" is that  for loop is usually used when the "number of iterations" is 'known', whereas Python while loop is used 
+      when the number of iterations is 'unknown'.
+
+Example:
+        
+               # Python program to illustrate while loop     
+                  count = 0
+
+              while (count < 3): 
+	             count = count + 1
+	             print("Hello Geek")
+

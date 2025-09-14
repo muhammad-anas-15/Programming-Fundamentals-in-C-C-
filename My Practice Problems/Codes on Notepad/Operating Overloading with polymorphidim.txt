@@ -1,0 +1,53 @@
+Operating Overloading:
+--> Important Concept of Polymorphisim.
+--> It is a Compile time polymorphisim.
+--> It is an idea of giving special meaning to an existing operator in C++ without changing   
+    its original meaning.
+
+Explain:   class A;
+                      A a1,a2,a3;
+                      a3 = a1 + a2;
+
+We have 3 variables “a1”, “a2” and “a3” of type “class A”. Here we are trying to add two objects “a1” and “a2”, which are of user-defined type i.e. of type “class A” using the “+” operator. This is not allowed, because the addition operator “+” is predefined to operate only on built-in data types. But here, “class A” is a user-defined type, so the compiler generates an error. This is where the concept of “Operator overloading” comes in.
+
+Now, if the user wants to make the operator “+” add two class objects, the user has to redefine the meaning of the “+” operator such that it adds two class objects. This is done by using the concept of “Operator overloading”. So the main idea behind “Operator overloading” is to use C++ operators with class variables or class objects. Redefining the meaning of operators really does not change their original meaning; instead, they have been given additional meaning along with their existing ones.
+
+Complex operator+(Complex const& obj)
+    {
+        Complex res;
+        res.real = real + obj.real;
+        res.imag = imag + obj.imag;
+        return res;
+    }
+
+Difference between Operator Functions and Normal Functions:
+  
+  * Operator functions are the same as normal functions. The only differences are, that the name of an operator function is always the operator keyword followed by the symbol of the           \   operator, and operator functions are called when the corresponding operator is used.  
+
+Operator Overloaded:
+                                 ** Unary operators (++,--) ** Contains only one operand  syntax: --> returntype operator symbol()
+                                 ** Binary operators (+,-,*,/,%) ** Contains two operands  syntax: --> returntype operator symbol(arguments)
+                                 ** Assignment Operator (=, +=, -=, *=, /=, %=) **
+                                 ** Bitwise Operator (&,|, ||, !, <<,>>,~,^)**
+                                 ** Relational Operator (> , < , ==, <=, >=)
+                                 ** De-referencing Operator (->)
+                                 ** Special operators ( [ ], (), etc)**
+                                 ** Logical Operator ()
+                                 ** Overlaoding I/O operator **
+                                 ** Postfix/Prefix Operator**
+                                 ** Array Subscript Operator**
+
+
+
+Operator that can't be Overloaded:
+                                ** Scope Resolution Operator (::)
+    This returns the size of the object or datatype entered as the operand. This is evaluated by the compiler and cannot be evaluated during runtime.
+  
+                                ** Class Member Access Operator (. , *)
+    This helps identify and specify the context to which an identifier refers by specifying a namespace. It is completely evaluated at runtime and works on names rather than values. 
+
+                                ** Size of Operator (sizeof)
+
+                                ** Conditional/Ternary Operator (?,:)
+   The ternary is a short representation of an if-else statement. In operator, the T/F expressions are only evaluated on the basis of the truth value of the conditional expression. 
+

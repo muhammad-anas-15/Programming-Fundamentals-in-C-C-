@@ -1,0 +1,62 @@
+ #include<stdio.h>
+float income_before_taxes();
+float income_after_taxes();
+float money_on_clothes();
+ float money_on_school_supplies();
+float money_on_saving_bonds();
+float money_parents_spends();
+
+
+int main()
+{
+int no_of_hours,no_of_weeks;
+float amount;
+
+no_of_hours = 35;
+no_of_weeks =5;
+amount = 15.50;
+
+ 
+ printf("Enter no of hour per week =%d\n",no_of_hours);
+printf("Income before taxes =$%f\n",income_before_taxes());
+
+ 
+printf("Income after taxes =$%f\n",income_after_taxes());
+
+ 
+printf("Income spend on clothes and accessories =$%f\n",money_on_clothes());
+printf("Income spend on school and supplies =$%f\n", money_on_school_supplies());
+printf("Income spend on saving bonds =$%f\n", money_on_saving_bonds()); 
+printf("Money parents spend =$%f\n",money_parents_spends());
+
+
+return 0;
+}
+float income_before_taxes()
+{
+ return (35 *5)*15.50 ;
+  
+}
+float income_after_taxes()
+{
+ 
+return ((35 *5)*15.50)- (((35 *5)*15.50)) * (0.14) ;
+}
+float money_on_clothes()
+{
+
+return (((35 *5)*15.50)-(((35 *5)*15.50)*(0.14))) * (0.1);
+}
+float money_on_school_supplies()
+{
+    return (((35 *5)*15.50)-(((35 *5)*15.50)*(0.14))) * (0.1) * (0.1);
+}
+float money_on_saving_bonds()
+{
+    return (2332.75 - 256.594) *(0.25) ;
+}
+float money_parents_spends()
+{
+    return 519.039001 * (0.50);
+}
+

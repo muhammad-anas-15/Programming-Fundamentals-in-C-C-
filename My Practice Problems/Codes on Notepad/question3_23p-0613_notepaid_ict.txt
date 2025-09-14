@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>"Html First Class</title>
+
+
+</head>
+
+<body bgcolor="white">
+  <h1 align ="center"><font color="blue" size="10">Dogs<hr style= "border-color:blue;"></font></h1>
+  <h1><font color="blue" size="10">Introduction</font></h1>
+  <p1>The dog() is the domistecated descent of wolf. Also called domestic dog, it is derived from extent pleitosone wolf, and the modern wolf is the dog nearest living relative. The dog was the first species domesticated by humans. Hunter gather did this, over 15000 years ago in Germany, which was before the development of agriculture.</p1>
+
+<br></br>
+<br></br>
+<p2>The dog is has been selectively breed over millenia over behaviours, sensory capabilities and physical attributes , dog breed vary widely in shape , size and color. They perform many role for humans such as hunting, herding, puling loads, protection, assecting police and the military, companionship, therapy and aiding disabled people. Over the millenia dog adapted to human behaviours and human canine bond has been a topic of frequent study.  This influence on human society has given sobriquet's of "men's best friend".<hr style= "border-color:blue;"></p2>
+<br></br>
+<br></br>
+
+<h1><font color="blue" size="10">Breeds:</font></h1>
+<p1>Dogs are the most variabe mammal on earth with around 450 globally recognized breeds. In the Victorian era, directed human selection developed the modern dogs breeds, which result in vast range of phenotypes. Most breeds are derived from small number of founders within the last 200 years and since then dog undergo rapid phenotypic change and were formed into modern dog breeds due to artificial selection imposed by humans.</p1>
+<br></br>
+<br></br>
+<p2>These breeds posseses distinct traits related to morphology which include body size, shape, skull shape, phenotype, fur type and color. Their behavioral tags include guarding, hunting and retrieving and scent detection. Their personality traits include hypersocial behaviour, boldness and aggression which demonstrates the function and behavioral diversity of dogs.</p2>
+
+<br></br>
+<br></br>
+<h1><font color="blue" size="10">Types:</font></h1>
+<br></br>
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img2.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img1.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img3.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img4.ict.jpg" width="200" height="200"> 
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img5.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img6.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img7.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img8.ict.jpg" width="200" height="200">
+<br></br>
+<br></br>
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img9.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img1.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img11.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img12.ict.jpg" width="200" height="200"> 
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img5.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img6.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img7.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img8.ict.jpg" width="200" height="200">
+   
+<h1><font color="blue" size="10">Complete type design</font><hr style= "border-color:blue;"></h1>
+<img src="file:///C:/Users/Admin/Pictures/img2.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img1.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img3.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img4.ict.jpg" width="200" height="200"> 
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img5.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img6.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img7.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img8.ict.jpg" width="200" height="200">
+<br></br>
+<img src="file:///C:/Users/Admin/Pictures/img5.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img6.ict.jpg" width="200" height="200">
+<img src="file:///C:/Users/Admin/Pictures/img7.ict.jpg" width="200" height="200" > 
+<img src="file:///C:/Users/Admin/Pictures/img8.ict.jpg" width="200" height="200">
+</body>
+
+
+</html>

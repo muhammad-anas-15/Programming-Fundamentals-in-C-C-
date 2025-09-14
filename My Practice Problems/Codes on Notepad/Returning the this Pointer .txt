@@ -1,0 +1,40 @@
+Returning the this Pointer: 
+
+In some cases, you might want a member function to return a reference to the current object. This is achieved by returning *this, which dereferences the this pointer and returns the object itself.
+Example:
+
+class Student {
+public:
+    Student& setName(const string& name); // Member function declaration
+private:
+    string name; // Data member
+};
+
+Student& Student::setName(const string& name) {
+    this->name = name; // Setting the name
+    return *this; // Returning reference to the current object
+}
+
+
+--> Cascaded Member Function Calls: 
+
+When a member function returns *this, you can chain multiple member function calls on the same object in a single statement. This is known as cascaded function calls.
+
+Example:
+
+
+Student st;
+st.setName("John").setAge(20).setRollNo(101).printage();
+
+If a function does not return this pointer, it should be called in
+the end of the list of the calls. For example,
+S.setage().printage();
+
+Function setage() returns this pointer, but printage() does not
+return pointer.
+Student & setage(int a) { age = a; return *this;}
+Void printage() { cout<<“student age: “<<age; }
+
+In this example, setName() sets the name of the student and returns a reference to the current object. Then, setAge() sets the age of the student and returns the same object again. Finally, setRollNo() sets the roll number of the student. All these function calls are chained together in a single statement, operating on the same st object.
+
+This technique is commonly used in C++ to write concise and readable code, especially when setting multiple properties of an object. It improves code readability and reduces the number of lines required to perform multiple operations on the same object.

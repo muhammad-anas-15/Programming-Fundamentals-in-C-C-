@@ -1,0 +1,23 @@
+File myfile.txt created successfully
+Data stored in myfile.txt
+File closed!File myfile.txt created successfully
+Data stored in myfile.txt
+File closed!Random No is =81
+Random No is =81
+Random No is =81
+File closed!File myfile.txt created successfully
+Data stored in myfile.txt
+File closed!Random No is =92
+Random No is =92
+Random No is =92
+File closed!File myfile.txt created successfully
+Data stored in myfile.txt
+File closed!Random No is =15
+Random No is =15
+Random No is =15
+File closed!File myfile.txt created successfully
+Data stored in myfile.txt
+Random No is =26
+Random No is =26
+Random No is =26
+File closed!

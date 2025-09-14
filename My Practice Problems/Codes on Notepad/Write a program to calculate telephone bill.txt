@@ -1,0 +1,38 @@
+Write a program that prompts the user to input number of calls and calculate the monthly telephone bills as per the following rule:
+
+Minimum Rs. 200 for up to 100 calls.
+Plus Rs. 0.60 per call for next 50 calls.
+Plus Rs. 0.50 per call for next 50 calls.
+Plus Rs. 0.40 per call for any call beyond 200 calls.
+
+
+Code:
+
+#include<stdio.h>
+int main(){
+int number_of_calls;
+printf("Enter no of calls:");
+scanf("%d",&number_of_calls);
+
+if (number_of_calls == 100){
+float amount;
+amount =200;
+printf("Amount for 100 call is =%f",amount);}
+
+if (number_of_calls == 150){
+float amount;
+amount = 200 +(50*0.6);
+printf("Amount for additional 50 call is =%f",amount);}
+
+if (number_of_calls == 200){
+float amount;
+amount = 200 +(50*0.6) + (50*0.50);
+printf("Amount for additional 50 call is =%f",amount);}
+
+if (number_of_calls >200){
+float amount;
+amount = 200 +(50*0.6) + (50*0.50) + 0.40 ;
+printf("Amount for calls geater than 200 is =%f",amount);}
+
+else
+{return 0;}}

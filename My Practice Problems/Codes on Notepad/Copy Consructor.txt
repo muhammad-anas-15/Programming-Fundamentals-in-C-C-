@@ -1,0 +1,99 @@
+|Copy Consructor:
+
+ * A copy constructor is used to copy or initilaize the value of one object into other object.
+ * If you don't define a copy constructor explicitly, the compiler provides a default copy constructor.
+   However, it performs a shallow copy, which might not be suitable for classes containing pointers 
+   or dynamically allocated resources.
+ * Copy constructor have reference type parameters.
+ * In C++ we have operator oveloading concept were the copy constructor is used.
+
+                                            Deep Copy            |      Shallow Copy 
+                                                                 |
+* A deep copy constructor is responsible for copying not only    | * A shallow copy constructor simply copies the values of member variables,
+  the member variables of an object but also any dynamically     |   including pointers, without duplicating the dynamically allocated memory
+  allocated memory they might point to.                          |   they point to.
+* In a deep copy operation, the copy constructor or assignment   |
+  operator recursively duplicates the values of all member       | * If the class contains pointers as member variables, only the memory addresses 
+  variables from the source object to the destination object.    |   stored in those pointers are copied. This means both the original and the copied
+                                                                 |   object will point to the same dynamically allocated memory locations.
+* If a class contains pointers to dynamically allocated          | 
+  memory,it's essential to define a copy constructor that        |   
+  performs a deep copy to avoid issues such as memory leaks      |   
+  or dangling pointers.                                          |
+                                                                 | * Both the original object and the copied object share the same dynamically 
+* If the class contains pointers as member variables, the deep   |   allocated resources. Any modification made to the shared resource through one 
+  copy operation dereferences those pointers and copies the      |   object will reflect in the other object as well.
+  contents they point to, rather than just copying the memory    |  
+  addresses.                                                     | * Shallow copying can lead to problems if the class contains dynamically allocated
+                                                                 |   resources. If one object deallocates the shared resource, the other object might 
+* After a deep copy operation, the original and copied objects   |   end  up with a dangling pointer, pointing to invalid memory.
+  are completely independent of each other.Modifying one object  |
+  does not affect the other, even if they contain nested objects |
+  or dynamically allocated resources.                            |
+
+
+
+
+
+
+Syntax:                                                             
+                                                                     
+         class_name(class_name &ref_object)                       
+         {                                                       
+             //code.
+         }
+
+
+
+
+Example:   
+ 
+#include <iostream>
+using namespace std;
+
+class Fm{
+    private:
+      int a;
+      int b;
+    public:  
+    Fm(){
+        int a = 0, b = 0;
+    }
+    Fm(int c, int d){
+        a = c;
+        b = d;
+    }
+
+   /*
+     If we don't write this part of code there would be no error in code b/c
+     the compiler provide us default copy constructor.
+   */
+    //Fm(Fm &obj)
+    //{
+     //cout<<"Copy Constructor Called!!!";
+      //  a = obj.a;
+        //b = obj.b;
+    }
+    void display(){
+        cout<<"Value of a is:"<<a<<endl;
+        cout<<"Value of b is:"<<b<<endl;
+    }
+    };
+int main() {
+     Fm F1;
+     F1.display();
+     Fm F2(4, 5);
+     F2.display();
+     Fm F3 = F2; // copy constructor invoked.// other method is Fm F3(F2). but it would not invoked if F3 = F2 b/c F3 is already made.
+     F3.display();
+    return 0;
+}
+
+Output:
+
+Value of a is:0
+Value of b is:0
+Value of a is:4
+Value of b is:5
+Value of a is:4
+Value of b is:5

@@ -1,0 +1,57 @@
+#include<stdio.h>
+int Housing_allowance();
+int Transportation_charges();
+int Security_charges();
+int Net_salary();
+
+int main(){
+
+int Basic_salary,Housing_allowance,Transportation_charges,Security_charges,Net_salary;
+
+printf("Enter Basic Salary:");
+scanf("%d",&Basic_salary);
+
+printf("Enter House Allowance:");
+scanf("%d",&Housing_allowance);
+
+printf("Enter Transportation Charges:");
+scanf("%d",&Transportation_charges);
+
+printf("Enter Security Charges:");
+scanf("%d",&Security_Charges);
+
+int ha = Housing_allowance();
+int tc= Transportation_charges();
+int sc= Security_charges();
+int ns= Net_salary();
+
+printf("Welcome to the Employee Payroll System!\n");
+printf("Enter the basic Salary of the Employee: 2000\n");
+printf("Employee Details;");
+printf("Basic_salary =%d",Basic_salary);
+printf("Housing Allowance =%d",tc );
+printf("Transportation Charges =%d", tc);
+printf("Security Charges = 5000");
+printf("Net Salary =%d",ns ):
+
+return 0; 
+
+
+
+}
+int Housing_allowance()
+{
+ return Basic_salary * (0.1);
+}
+int  Transportation_charges()
+{
+ return  Housing_allowance * (0.5);
+}
+int Security_charges()
+{
+ return  5000;
+}
+int Net_salary()
+{
+ return  Basic_salary - Housing_allowance - Transportation_charges - 5000;
+}

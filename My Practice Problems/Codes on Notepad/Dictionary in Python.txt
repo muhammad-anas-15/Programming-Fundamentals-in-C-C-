@@ -1,0 +1,17 @@
+Dictionary in Python:
+
+     * Dictionaries in Python is a data structure, used to store values . 
+     * This makes it different from lists, tuples, and arrays as in a dictionary each key has an associated value.
+     * A Python dictionary is a data structure that stores the value in key :value pairs.
+        Example:
+                         Dict = {1: 'Geeks', 2: 'For', 3: 'Geeks'}
+                         print(Dict)
+
+Syntax:
+                 dict_var = {key1 : value1, key2 : value2, …..}
+
+
+--> Create a Dictionary:
+
+    * A dictionary can be created by placing a sequence of elements within "curly {}" braces, separated by a ‘comma’.
+    * Values in a dictionary can be of any data type and can be duplicated, whereas keys can’t be repeated and must be immutable. 

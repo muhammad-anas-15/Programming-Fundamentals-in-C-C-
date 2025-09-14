@@ -1,0 +1,28 @@
+Composition:
+
+    * This process of building complex objects from simpler ones is called  object composition.
+
+    * In object-oriented programming languages, object composition is used for objects that have a
+
+    * Strong “has-a” relationship with each other. 
+ 
+    * Therefore, the complex object is called the "whole" or a 'parent object' whereas a 'simpler object' is often referred to as a "Part" or 'child object'.
+
+Syntax:
+    
+      class A // Part or Child class or composing class
+            {
+              // body of a class
+            };
+
+     class B // whole or Parent class or composed class
+       {
+         A objA;
+         public:
+             B(arg-list) : objA(arg-list1);
+        };
+
+
+ Types of Object Composition:
+
+ 

@@ -1,0 +1,98 @@
+Inheritance:
+
+--> Some definitions in class hierarchy:
+
+1) Direct base class:
+                     In object-oriented programming,a direct base class refers to a class from which another class directly inherits. When a class is inherited explicitly, it means that the inheritance relationship is explicitly declared in the derived class.
+
+Example:
+         
+#include <iostream>
+using namespace std;
+
+// Base class
+class Base {
+public:
+    void display() {
+        cout << "Display function in Base class" << endl;
+    }
+};
+
+// Derived class inheriting from Base class explicitly
+class Derived : public Base {
+public:
+    void show() {
+        cout << "Show function in Derived class" << endl;
+    }
+};
+
+int main() {
+    Derived derivedObj;
+    derivedObj.display(); // Accessing Base class function through Derived object
+    derivedObj.show();    // Accessing Derived class function
+
+    return 0;
+}
+
+Output : 
+Display function in Base class
+Show function in Derived class
+
+
+2) Indirect base class:
+                       In object-oriented programming, an indirect base class refers to a class that is not directly inherited by another class but is inherited through a chain of inheritance.
+
+Example:
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    void eat() {
+        cout << "Animal eats" << endl;
+    }
+};
+
+// Intermediate class inheriting from Animal
+class Mammal : public Animal {
+public:
+    void breathe() {
+        cout << "Mammal breathes" << endl;
+    }
+};
+
+// Derived class inheriting from Mammal (indirectly inherits Animal)
+class Dog : public Mammal {
+public:
+    void bark() {
+        cout << "Dog barks" << endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat();      // Accessing function from Animal
+    myDog.breathe();  // Accessing function from Mammal
+    myDog.bark();     // Accessing function from Dog
+
+    return 0;
+}
+
+Output:
+Animal eats
+Mammal breathes
+Dog barks
+
+3) Single inheritance:
+4) Multiple inheritance:
+
+Syntax of Define a Class Hierarchy in Inheritance:
+                                                  class Derived class_name : Access level base class_name
+where
+             – access-level specifies the type of derivation
+             • private by default, 
+             • public or protected
+
+

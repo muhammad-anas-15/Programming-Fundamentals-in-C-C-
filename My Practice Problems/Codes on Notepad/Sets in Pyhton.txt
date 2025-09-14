@@ -1,0 +1,58 @@
+Sets in Pyhton:
+
+      * Python Set is an unordered collection of data types that is iterable, mutable, and has no duplicate elements.
+      * The order of elements in a set is undefined though it may consist of various elements.
+      * A Python set cannot have mutable elements like a list or dictionary, as it is immutable. 
+      * The major advantage of using a set, as opposed to a list, is that it has a highly optimized method for checking whether a specific element is contained in the set.
+
+
+Creating a Set in Python:
+ 
+     * Python Sets can be created by using the built-in   "set()"    function with an iterable object or a sequence by placing the sequence inside curly braces, separated by a ‘comma’.
+     * A set is created by using curly braces {} notation, containing the number 1,2 and 3.
+
+                               # Another Method to create sets in Python3 Set containing numbers
+                                                my_set = {1, 2, 3}
+                                                print(my_set)
+
+Adding Elements to a Set in Python
+
+                             Using add() Method
+                             Using update() Method
+
+        * Only one element at a time can be added to the set by using add() method, loops are used to add multiple elements at a time with the use of add() method.
+        *  Lists cannot be added to a set as elements because Lists are not hashable whereas Tuples can be added because tuples are immutable and hence Hashable. 
+
+ Exampe 1:
+
+        # Creating a Set
+          set1 = set()
+          print("Initial blank Set: ")
+          print(set1)
+
+      # Adding element and tuple to the Set
+       set1.add(8)
+       set1.add(9)
+       set1.add((6, 7))
+       print("\nSet after Addition of Three elements: ")
+      print(set1)
+
+    # Adding elements to the Set using Iterator
+
+       for i in range(1, 6):
+             set1.add(i)
+            print("\nSet after Addition of elements from 1-5: ")
+            print(set1)
+
+Output:
+
+       Initial blank Set: 
+      set()
+
+       Set after Addition of Three elements: 
+      {8, 9, (6, 7)}
+
+       Set after Addition of elements from 1-5: 
+       {1, 2, 3, (6, 7), 4, 5, 8, 9}
+
+

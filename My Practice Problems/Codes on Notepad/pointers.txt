@@ -1,0 +1,49 @@
+Pointers
+
+1) swap 2 variables using pointers
+
+Code:
+
+#include<stdio.h>
+int main()
+{
+    int a =9, b =5;
+    
+    swap(&a,&b);
+     printf("Value of a is %d\n",a);
+     printf("Value of b is %d",b);
+    
+}
+int swap(int* x, int* y)
+{
+    int temp =*x;
+     *x = *y;
+     *y =temp;
+}
+
+
+
+
+Basic C program to understand pointers
+
+code:
+
+#include <stdio.h>
+
+int main() {
+    
+    int a= 20;
+    int *ptr ,**b;
+    ptr = &a;
+    
+    printf("%d\n",a); // 20
+    printf("%d\n",&a); // address of a
+    printf("%d\n",ptr); //address of a
+    printf("%d\n",*ptr);//20 
+    printf("\n");
+    printf("%d\n",b);  // address of ptr;
+    printf("%d\n",*b); //address of a
+    printf("%d\n",**b);// 20  
+    
+    return 0;
+}

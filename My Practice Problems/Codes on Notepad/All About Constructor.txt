@@ -1,0 +1,355 @@
+Constructor:
+  * Constructor is a special type of member function that is used to initialize the data members for an object of a class
+    automatically called, when an object of the same class is created.
+  
+  * Special type of function which has same name as of class    
+    class name.
+
+  * Constructor is being automatically call at the time of object
+    declaration.
+
+  * Constructor is automatically invoked as soon as object of its class is created.
+
+  * Constructor do not return value, hence they do not have a return type not even 'void'.
+
+  * Constructors are defined inside public section
+
+   
+    The prototype of the constructor looks like:
+                                          <class-name> (list-of-parameters){}
+
+
+   Constructor can be defined inside the class declaration or outside the class declaration:
+
+   a. Syntax for defining the constructor within the class
+        <class-name>(list-of-parameters)
+        {
+                  //constructor definition
+        }
+
+   b. Syntax for defining the constructor outside the class
+        <class-name>: :<class-name>(list-of-parameters)
+        {
+                //constructor definition
+        }  
+
+Example:
+
+       a)// Example: defining the constructor within the class
+
+                    #include<iostream>
+                    using namespace std;
+                             class student // class declaration
+                    {
+	                         int rno;
+	                         char name[50];
+	                         double fee;
+	                     public:
+	                          student()// constructor function definition or it is called (Explicit Default constructor)
+	                     {
+		                     cout<<"Enter the RollNo:";
+		                     cin>>rno;
+		                     cout<<"Enter the Name:";
+		                     cin>>name;
+		                     cout<<"Enter the Fee:"; 
+		                     cin>>fee;
+	                      } 
+	 
+
+
+	                           void display()
+	                                     {
+		                    cout<<endl<<rno<<"\t"<<name<<"\t"<<fee;
+	                                                 }
+                            };
+ 
+                int main()
+                      {
+	                 student s; //constructor gets called automatically when we create the object of the class
+	                 s.display();
+	                    return 0;
+
+                       }
+
+
+
+         b)// Example: defining the constructor outside the class
+
+                    #include<iostream>
+                    using namespace std;
+                             class student // class declaration
+                    {
+	                         int rno;
+	                         char name[50];
+	                         double fee;
+	                     public:
+	                          student();
+                                  void display();
+                            };
+
+                           student :: student()
+	                     {
+		                     cout<<"Enter the RollNo:";
+		                     cin>>rno;
+		                     cout<<"Enter the Name:";
+		                     cin>>name;
+		                     cout<<"Enter the Fee:"; 
+		                     cin>>fee;
+	                      } 
+	 
+
+
+	                       void student :: display()
+	                                     {
+		                    cout<<endl<<rno<<"\t"<<name<<"\t"<<fee;
+	                                                 }
+ 
+                int main()
+                      {
+	                 student s; //constructor gets called automatically when we create the object of the class
+	                 s.display();
+	                    return 0;
+
+                       }
+
+
+
+   Types of Constructor:
+
+                 a) Default constructor
+                 b) Parametrized constructor
+                 c) Copy constructor
+
+
+  1) Default constructor:
+
+       * Default constructor is the constructor which doesn’t take any argument. 
+       * It has no parameters. It is also called a zero-argument constructor.
+       * Even if we do not define any constructor explicitly, the compiler will automatically provide a default constructor implicitly.
+
+   Example:
+         #include<iostream>
+         using namespace std;
+         class A{
+              private:
+                   int a;
+                   int b;
+              public:
+                   A() // Default Constructor
+                 {
+                       a=10;
+                       b=4; 
+                  }
+            };
+           int main()
+                {
+                    A values;//default constructor called automatically when object of the class is created.
+                    cout<<"a is:"<<values.a<<" "<<"b is: "<<values.b<<endl;
+          
+
+                return 0;
+               }
+ 
+ 2) Parametrized Constructor:
+         
+     * Parametrized constructor is the constructor which take parameter/argument.
+     * It is used to initialize the various data elements of different objects with different values when they are created.
+     * It is used to overload constructors.
+     * we have more than one constructor in a class called Constructor Overloading.
+     * In parametrized constructor when you are creating object at the same time you have to pass (arguments)
+
+
+   Example:
+         #include<iostream>
+         using namespace std;
+         class A{
+              private:
+                   int a;
+                   int b;
+              public:
+                   A(int c, int d) // Prametrized Constructor
+                 {
+                       a=c;
+                       b=d; 
+                  }
+                void display()
+                {
+                    cout<<"a is:"<<a<<" "<<"b is:"<<b<<endl;
+                }
+            };
+           int main()
+                {
+                    A a(4,5);//Prametrized constructor pass arguments at same time object is created.
+                    a.display();
+          
+
+                return 0;
+               }
+
+
+
+ 3) Copy Consructor:
+
+    * A copy constructor is a member function that initializes an object using another object of the same class.
+    * Constructor which creates an object by initializing it with an object of the same class, which has been created previously
+    * Copy constructor takes a reference to an object of the same class as an argument.
+    * The process of initializing members of an object through a copy constructor is known as copy initialization.
+      Also called member-wise initialization because the copy constructor initializes one object with the existing object,
+      both belonging to the same class on a member by member copy basis.  
+
+    * The copy constructor can be defined explicitly by the programmer. If the programmer does not define the copy constructor, the compiler does it for us.
+    * The copy constructor is used to initialize the members of a newly created object by copying the members of an already existing object.
+
+Example:
+
+          Syntax of Copy Constructor,
+                                               classname(const classname&old_object);
+
+
+
+Q) Why we used reference operator(&) in syntax of copy constructor ?
+Ans:
+
+      Copy constructor takes a reference to an object of the same class as an argument. If you pass the object by value in the copy constructor, it would result in a recursive call to the copy constructor itself. This happens because passing by value involves making a copy, and making a copy involves calling the copy constructor, leading to an infinite loop. Using a reference avoids this recursion. So we use reference of Objects to avoid infinite calls.
+
+
+Example:
+   
+  #include <iostream>
+using namespace std;
+
+class Swap{
+    private:
+         int a;
+         int b;
+    public:
+         Swap(int x, int y)
+         {
+             a =x;
+             b =y;
+         }
+         Swap(const Swap &ref)
+         {
+             a=ref.a;
+             b=ref.b;
+             
+             
+         }
+         void display()
+         {
+             cout<<"Value of a is :"<<a<<" "<<"value of b is :"<<b<<endl; 
+         }
+    
+};
+int main() {
+      Swap A(3,6);
+      A.display();
+      
+      Swap B =A;
+      B.display();
+    return 0;
+}
+
+ Program related to combination of all constructors:
+
+  #include<iostream>
+  using namespace std;
+  
+  class value{
+       private:
+              int a;
+              int b;
+       public:
+              value(){   //default constructor
+                   a=10;
+                   b=30;
+                  }
+
+             value(int x, int y){ // parametrized constructor
+                   a = x;
+                   b = y;
+
+                  }  
+          
+             value(value &ref){ //copy constructor
+                   a = ref.a;
+                   b = ref.b;
+
+                  }     
+            void display()
+           {
+               cout<<"Value of a is :"<<a<<" "<<"Value of b is :"<<b<<endl;
+                        }
+      };
+    
+    int main()
+   {
+       value A;
+       value B(3,5);
+       value C(A);
+        A.display();
+       B.display();
+       C.display();
+   }
+
+
+
+
+
+ Constructor Overloading:
+    
+  In C++, We can have more than one constructor in a class with same name, as long as each has a different list of arguments.
+  This concept is known as Constructor Overloading and is quite similar to function overloading.
+   
+  * Overloaded constructors essentially have the same name (exact name of the class) and different by number and type of arguments.
+  * A constructor is called depending upon the number and type of arguments passed.
+  * While creating the object, arguments must be passed to let compiler know, which constructor needs to be called. 
+
+
+Example:
+ 
+// C++ program to illustrate 
+// Constructor overloading 
+#include <iostream> 
+using namespace std; 
+
+class construct 
+{ 
+
+public: 
+	float area; 
+	
+	// Constructor with no parameters 
+	construct() 
+	{ 
+		area = 0; 
+	} 
+	
+	// Constructor with two parameters 
+	construct(int a, int b) 
+	{ 
+		area = a * b; 
+	} 
+	
+	void disp() 
+	{ 
+		cout<< area<< endl; 
+	} 
+}; 
+
+int main() 
+{ 
+	// Constructor Overloading 
+	// with two different constructors 
+	// of class name 
+	construct o; 
+	construct o2( 10, 20); 
+	
+	o.disp(); 
+	o2.disp(); 
+	return 1; 
+} 
+
+ 
+
+ 

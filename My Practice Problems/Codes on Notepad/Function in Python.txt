@@ -1,0 +1,11 @@
+Function in Python:
+
+     * "def" keyword in order to declare function prototype.
+    * Parameter is optional.
+    * Colon(:) is compulsory.
+Syntax:
+
+              def  function-name(parameter):
+                        //
+                       //
+                       return value

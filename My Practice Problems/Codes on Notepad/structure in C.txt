@@ -1,0 +1,36 @@
+1) Create a structure type 'book' with name, price and number of pages as its attributes.
+
+Code:
+
+#include<stdio.h>
+#include<string.h>
+     struct book{
+          char name[50];
+          float price;
+          int no_of_pages;
+          }book1,book2,book3;
+
+    int main(){
+    
+          book1.no_of_pages =500;
+          book1.price = 100;
+          strcpy(book1.name,"Black Magic");
+
+     printf("%d\n%g\n%s\n ",book1.no_of_pages,book1.price,book1.name);
+     printf("\n\n");
+     
+     book2.no_of_pages =700;
+          book2.price = 180;
+          strcpy(book2.name,"Red Devil");
+
+     printf("%d\n%g\n%s\n ",book2.no_of_pages,book2.price,book2.name);
+     
+     printf("\n\n");
+     book3.no_of_pages =590;
+          book3.price = 200;
+          strcpy(book3.name,"The Archieves");
+
+     printf("%d\n%g\n%s\n ",book3.no_of_pages,book3.price,book3.name);
+    return 0;
+    }
+             

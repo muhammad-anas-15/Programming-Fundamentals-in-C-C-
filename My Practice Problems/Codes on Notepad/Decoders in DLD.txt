@@ -1,0 +1,57 @@
+Decoders: 
+
+         1) It is multiple input and multiple Output Device, that converts coded input into decoded output
+         2) Decoder is used to convert code in to set of signals.
+         3) Decoder is a combinational circuit that has ‘n’ input lines and maximum of 2n output lines. 
+         4) A decoder is a logic circuit that accepts a set of inputs that represents a binary number and activates only the output 
+            that corresponds to the input number.
+         5) In other words, a decoder circuit look at its inputs, determines which binary number is present there, and activates the one output that	   
+            corresponds to the number, all other outputs remain inactive.
+
+         6) An AND gate can be used as the basic decoding element because it produces a high output only when all inputs are high.
+
+         if 2 inputs --> 2^2 = 4 outputs
+         if 3 inputs --> 2^3 = 8 outputs
+
+
+          One of these outputs will be active
+          High based on the combination of inputs present, when the decoder is enabled. That means decoder detects a particular code. 
+          The outputs of the decoder are nothing but the min terms of ‘n’ input variables lines, when it is enabled.
+
+Applications of Decoder:
+      
+        1) Binary to Octal           3  8
+        2) Binary to Hexadecimal     4  16
+        3) Binary to Decimal 
+
+1) Truth Table of 2 * 4 Decoder:
+                                    
+
+                           Inputs                                      Outputs
+                       A           B                               Do     D1     D2     D3    
+                       0           0                                1     0       0     0
+                       0           1                                0     1       0     0
+                       1           0                                0     0       1     0
+                       1           1                                0     0       0     1
+
+   So  therefore,
+                      Do = A'B'   ,      D1 = A'B        D2 = AB'       D3 = AB
+
+
+
+Truth Table of 3 * 8 Decoder:
+
+
+
+                         X    Y    Z     Do   D1   D2   D3   D4   D5   D6   D7
+                         0    0    0     1    0    0    0    0    0    0    0
+                         0    0    1     0    1    0    0    0    0    0    0
+                         0    1    0     0    0    1    0    0    0    0    0 
+                         0    1    1     0    0    0    1    0    0    0    0    
+                         1    0    0     0    0    0    0    1    0    0    0    
+                         1    0    1     0    0    0    0    0    1    0    0   
+                         1    1    0     0    0    0    0    0    0    1    0
+                         1    1    1     0    0    0    0    0    0    0    1
+
+So  therefore,
+                Do = A'B'C' ,  D1 = A'B'C  ,  D2 = A'B C'  ,  D3 = A'B C  ,  D4 = A B'c' ,  D5 = A B'C  ,  D6 = A B C'  ,  D7 = A B C

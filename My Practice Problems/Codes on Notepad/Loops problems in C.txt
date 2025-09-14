@@ -1,0 +1,449 @@
+ASCII LIST:
+A=65 --- Z=90
+a=97 --- z=122
+a
+
+Q1)  LCM of Two Numbers in C :
+
+Code:
+
+ #include<stdio.h>
+ int main()
+ {
+     int num1,num2,LCM,count=1;
+     printf("Enter num1:");
+     scanf("%d",&num1);
+     printf("Enter num2:");
+     scanf("%d",&num2);
+     
+     LCM= (num1<num2) ? num1 :num2 ;
+      
+     
+     
+      while (count )
+     {
+         if (LCM %num1==0 && LCM% num2==0)
+         {
+             printf("LCM of %d and %d = %d",num1,num2,LCM);
+             count =0;
+         }
+         LCM++;
+         
+             
+         } 
+ }
+
+
+Q2) Fibonacci Series Program in C
+
+The Fibonacci series is the sequence where each number is the sum of the previous two numbers of the sequence.                        The first two numbers of the Fibonacci series are 0 and 1 and are used to generate the Fibonacci series.
+
+Code:
+
+ #include<stdio.h>
+ int main()
+ {
+     int n;
+     printf("Enter n:");
+     scanf("%d",&n);
+     int a,b,c;
+     a=0;
+     b=1;
+     
+     for(int i=1;i<=n;i++)
+     {
+          c =a+b;
+          a=b;
+          b=c;
+          printf("%d\n",c);
+          
+     }
+ }
+ 
+
+Q3) C Program to Generate Multiplication Table
+ 
+Code:
+
+#include <stdio.h>
+
+int main() {
+   int num =3;
+   
+   for (int i=1; i<=10; i++)
+   {
+       int result = num * i;
+       printf("%d * %d =%d\n",num,i,result);
+   }
+
+    return 0;
+}
+
+Q4) C Program to Reverse an Integer
+
+Code:
+
+ #include<stdio.h>
+ 
+ int main()
+ {
+     int reverse=0, num ;
+     printf("Enter number:");
+     scanf("%d",&num);
+     
+     while (num > 0)
+     {
+         reverse =(reverse*10)+num%10;
+         num =num/10;
+     }
+     printf("Reverse =%d",reverse);
+     return 0;
+ }
+
+Q5) C program to find prime number
+
+Code:
+
+ #include<stdio.h>
+
+int main()
+{
+  int num,count=0;
+  printf("Enter num: ");
+  scanf("%d",&num);
+  
+  for(int i=1; i<=num; i++)
+  {
+  if(num %i==0)
+    {
+      count++;
+}
+}
+ if(count==2)
+{
+    printf("number is prime:");
+}
+else
+{
+    printf("not prime:");
+
+}
+return 0;
+}
+
+ 
+Q6) C Program to Check Armstrong Number
+
+
+Code:
+
+ #include<stdio.h>
+ int main()
+ {
+     int num,sum= 0, rem,temp;
+     printf("Enter number:");
+     scanf("%d",&num);
+       temp = num;
+     while (num >0)
+      
+     {
+         rem =num%10;
+         sum = sum + (rem*rem*rem);
+         num =num/10;
+     }
+     if (temp == sum)
+     {
+         printf("Armstrong");
+     }
+     else
+     {
+         printf("Not");
+     }
+     return 0;
+     
+ }
+
+
+Q7) Factorial of a number
+
+
+Code:
+
+#include<stdio.h>
+int main()
+{
+    int num,result=1;
+    printf("Enter num:");
+    scanf("%d",&num);
+    
+    for(int i=2; i<=num; i++)
+    {
+  
+        result *=i;
+        
+    }
+     printf("factorial is %d\n", result );
+     
+    
+}
+
+
+Q8) Factors of a number
+
+
+Code
+
+#include<stdio.h>
+int main()
+{
+    int num,result=1;
+    printf("Enter num:");
+    scanf("%d",&num);
+    
+    for(int i=1; i<=num; i++)
+    {
+         if (num%i ==0)
+         {
+             printf("%d\n",i);
+         }   
+    }
+}
+
+
+Pattern pattern:
+
+Triangle printing:
+
+Code:
+#include<stdio.h>
+ int main()
+ {
+     int num;
+     printf("Enter number: ");                        1
+     scanf("%d",&num);                                1 2
+     for (int i=1; i<=num; i++)                       1 2 3
+     {                                                1 2 3 4  
+         for (int j=1; j<=i; j++)
+         {
+             printf("%d",j);
+         }
+         printf("\n");
+     }
+ } 
+
+Ulta Triangle:
+
+Code:
+#include<stdio.h>
+ int main()
+ {
+     int num;
+     printf("Enter number: ");                         1 2 3 4
+     scanf("%d",&num);                                 1 2 3
+     for (int i=1; i<=num ; i++)                       1 2
+     {                                                 1
+         for (int j=1; j<=num+1-i; j++)
+         {
+             printf("%d",j);
+         }
+         printf("\n");
+     }
+ }
+
+Running Triangle:
+
+Code:
+ #include<stdio.h>
+ int main()
+ {
+     int num;
+     printf("Enter number: ");                     1
+     scanf("%d",&num);                             2 3
+     int a =1;                                     4 5 6
+     for (int i=1; i<=num ; i++)                   7 8 9 10
+     {                                             11 12 13 14 15
+         for (int j=1; j<=i; j++)
+         {
+             printf("%d\t",a);
+             a++;
+         }
+         printf("\n");
+     }
+ }
+
+Odd Triangle:
+
+Code:
+ #include<stdio.h>
+ int main()
+ {
+     int num;
+     printf("Enter number: ");
+     scanf("%d",&num);                                        1
+                                                              1 3
+     for (int i=1; i<=num ; i =i+2)                           1 3 5
+     {                                                        1 3 5 7
+         for (int j=1; j<=i; j=j+2)                           1 3 5 7 9
+         {
+             printf("%d\t",j);
+           
+         }
+         printf("\n");
+     }
+ }
+
+Space Square printing:
+
+Code:
+#include<stdio.h>
+int main()
+{
+    int n;
+    printf("Enter n:");
+    scanf("%d",&n);
+    
+    int a=1;
+    for(int i=1; i<=n; i++)
+    {                                                           *
+        for (int j=1; j<=n; j++)                                *
+        {                                                 *  *  *  *  *
+          int a = n/2+1;                                        *
+      if (j==a || i==a)                                         *
+             {
+              
+                 printf("*");
+             }
+             else
+             {
+                 printf(" ");
+             }
+        }printf("\n");
+    }
+}
+
+Cross Star:
+
+Code:
+ #include<stdio.h>
+ int main()
+ { int n=5;
+    for (int i=1; i<= n; i++)
+    {
+        for (int j=1 ;j<=n; j++)
+        {                                       *   *
+           if (i==j || i+j==6)                   * *
+           {                                      *
+                                                 * *
+              printf("*");                      *   *
+           }
+           else
+           {
+               printf(" ");
+           }
+        }
+                printf("\n");
+    }
+ }
+
+Floyd Triangle:
+
+Code:
+ #include<stdio.h>
+ int main()
+ { int n=4;
+ int a=1;
+    for (int i=1; i<= n; i++)                     1
+    {                                             2 3
+        for (int j=1 ;j<=i; j++)                  4 5 6
+        {                                         7 8 9 10
+           
+              printf("%d\t",a);
+              
+            a++;
+        }
+                printf("\n");
+    }
+ }
+
+Zero and One Triangle:
+
+Code:
+#include<stdio.h>
+ int main()
+ { 
+     int n,a;
+ 
+     printf("Enter number:");
+     scanf("%d",&n);
+ 
+    for (int i=1; i<= n; i=i+1)                                   1
+    {                                                             0 1
+        for (int j=1 ;j<=i; j=j+1)                                1 0 1
+        {                                                         0 1 0 1
+            if ((i+j)%2==0 )                                      1 0 1 0 1
+            {
+                printf("1 ");
+                
+            }
+            else
+            {
+                printf("0");
+            }
+        
+              printf("\n");
+        } 
+    }
+ }
+
+pattern printing :
+
+Code:
+
+#include<stdio.h>
+int main()
+{
+    for (int i=1; i<=5; i++)
+    {
+    for (int j=1; j<=9; j++)
+    {
+    if(j <=6-i  || j >=4+i)          * * * * *
+                                     * *   * *
+    {                                *       *
+        printf("*");
+    }
+    else
+    {
+        printf(" ");
+    }
+     
+}
+ printf("\n");
+}
+}
+
+2) 
+code:
+ #include <stdio.h>
+
+int main() {
+	int k,i,j;
+     for (int i=1; i<=4; i++)
+     {
+     	k=1;
+         for (int j=1; j<=7; j++)
+      
+     
+     if (j>=5-i && j<=3+i)                      1
+     {                                        1 2 1
+         printf("%d",k);                    1 2 3 2 1
+         j<4?k++:k--;                     1 2 3 4 3 2 1
+         
+     }
+     else
+     {
+         printf(" ");
+     }
+     printf("\n");
+     }
+     
+}

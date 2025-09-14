@@ -1,0 +1,399 @@
+:
+
+1): 
+
+ .
+
+Example:
+
+class Student {
+public:
+    void display(); // Member function declaration
+private:
+    int rollNo; // Data member
+};
+
+void Student::display() {
+    cout << "Roll Number: " << rollNo << endl; // Accessing data member inside member function
+}
+
+--> "this pointer:" 
+The this pointer is a special implicit pointer available in C++ within non-static member functions. It holds the address of the object that called the member function. This allows the member function to access the data members of that object.
+
+Example:
+
+class Student {
+public:
+    void display(); // Member function declaration
+private:
+    int rollNo; // Data member
+};
+
+void Student::display() {
+    cout << "Roll Number: " << this->rollNo << endl; // Accessing data member using this pointer
+}
+
+2)Implicit Passing of this Pointer: 
+
+When you call a non-static member function on an object, the compiler automatically passes the this pointer as a hidden argument to the function. This allows the member function to access the data members of the object it's called on.
+
+Example:
+
+Student st1, st2;
+st1.display(); // Compiler implicitly passes the address of st1 as this pointer to display()
+st2.display(); // Compiler implicitly passes the address of st2 as this pointer to display()
+
+3(
+
+1) 
+#include <iostream>
+using namespace std;
+class Person {
+private:
+string name;
+int age;
+
+public:
+Person(const string& name, int age) {
+this->name = name;
+this->age = age;
+}
+
+void displayInfo() {
+cout << "Name: " << this->name << endl;
+cout << "Age: " << this->age << endl;
+}
+
+void updateAge(int newAge) {
+this->age = newAge;
+}
+};
+
+int main() {
+Person person("John", 25);
+person.displayInfo();
+
+person.updateAge(30);
+cout << "After updating age:" << endl;
+person.displayInfo();
+
+return 0;
+}
+
+Output:
+
+Name: John
+Age: 25
+After updating age-
+Name: John
+Age: 30
+
+
+2) 
+#include <iostream>
+using namespace std;
+class MyClass {
+public:
+void foo() const {
+cout << "foo() called on const object with value: " << this->x << endl;
+
+// 'this' pointer is a pointer to a constant object
+
+// cannot modify the object's state
+
+}
+
+void bar() {
+
+cout << "bar() called on non-const object with value: " << this->x << endl;
+
+// 'this' pointer is a non-const pointer to the object
+
+// can modify the object's state
+
+this->x += 10;
+
+}
+
+int getX() const {
+
+return this->x;
+
+}
+
+private:
+
+int x;
+
+};
+
+int main() {
+MyClass obj1;
+obj1.bar();
+cout << "Value of x after calling bar(): " << obj1.getX() << endl;
+const MyClass obj2 = MyClass();
+
+obj2.foo();
+cout << "Value of x after calling foo(): " << obj2.getX() << endl;
+return 0;
+
+}
+
+Output:
+
+bar() called on non-const object with value: <garbage_value>
+Value of x after calling bar(): <garbage_value + 10>
+foo() called on const object with value: <garbage_value>
+Value of x after calling foo(): <garbage_value>
+
+3) Returning An Object Using The 'this' Pointer In C++:
+
+#include <iostream>
+using namespace std;
+class Point {
+private:
+int x, y;
+
+public:
+Point(int x = 0, int y = 0) {
+this->x = x;//10
+this->y = y;//15
+}
+
+Point operator+(Point const &obj) {
+Point res;
+res.x = x + obj.x; 5+10=15,  
+res.y = y + obj.y; 10+15=25 
+return res;
+}
+
+void display() {
+cout << "x = " << x << ", y = " << y << endl;//15  , 25
+}
+};
+
+int main() {
+Point p1(10, 15), p2(5, 10);//x=5, y=10 
+Point p3 = p1 + p2; // returns an object of Point class
+p3.display();
+return 0;
+}
+
+Output:
+x = 15, y = 25
+
+4)Method Chaining Using 'this' Pointer In C++:
+
+#include <iostream>
+using namespace std;
+class Calculator {
+private:
+int value;
+
+public:
+Calculator(int initialValue) : value(initialValue) {}//10
+
+Calculator& add(int num) {
+value += num;//15
+return *this;// return member function and value can be access through this pointer,
+}
+
+Calculator& subtract(int num) {
+value -= num;//27
+return *this;
+}
+
+Calculator& multiply(int num) {
+value *= num;//30
+return *this;
+}
+
+Calculator& divide(int num) {
+value /= num;27/4 =6
+return *this;
+}
+
+int getResult() const {
+return value;
+}
+};
+
+int main() {
+Calculator calc(10);
+int result = calc.add(5).multiply(2).subtract(3).divide(4).getResult();
+
+cout << "Result: " << result << endl;
+
+return 0;
+}
+
+Output:
+6
+
+5) Using 'this' Pointer In The Constructor:
+
+#include <iostream>
+using namespace std;
+class MyClass {
+private:
+int value;
+
+public:
+MyClass(int value) {
+this->value = value; // Initializing the member variable using 'this' pointer //10
+}
+
+void printValue() {
+cout << "Value: " << this->value <<endl;//10
+}
+};
+
+int main() {
+MyClass obj(10);
+obj.printValue();
+
+return 0;
+}
+
+6) Access Currently Executing Object Using 'this' Keyword In C++:
+
+#include <iostream>
+using namespace std;
+class MyClass {
+private:
+int value;
+
+public:
+MyClass(int value) {
+this->value = value;//10
+}
+void printValue() {
+cout << "Value of the current object: " << this->value << endl;
+}
+void compareValues(MyClass* other) {
+if (this->value == other->value) {
+cout << "The values are equal." << endl;
+} 
+else {
+cout << "The values are not equal." <<endl;
+}
+}
+};
+
+int main() {
+MyClass obj1(10);
+MyClass obj2(20);
+
+obj1.printValue();//10
+obj2.printValue();//20
+
+obj1.compareValues(&obj2);
+
+return 0;
+}
+
+Output:
+
+Value of the current object: 10
+Value of the current object: 20
+The values are not equal.
+
+7) Access Data Members Using 'this' Keyword:
+
+#include <iostream>
+using namespace std;
+class MyClass {
+private:
+int value;
+
+public:
+MyClass(int value) {
+this->value = value;//10
+}
+
+void printValue() {
+cout << "Value of the current object: " << this->value << endl;//10
+}
+
+void setValue(int newValue) {
+this->value = newValue;//20
+}
+
+int getValue() const {
+return this->value;
+}
+};
+
+int main() {
+MyClass obj(10);
+obj.printValue();
+
+obj.setValue(20);
+cout << "New value: " << obj.getValue() << endl;//20
+return 0;
+}
+
+8) Calling Member Functions Using 'this' Keyword In C++:
+
+#include <iostream>
+using namespace std;
+class MyClass {
+public:
+void foo() {
+cout << "Calling foo()..." <<endl;
+}
+
+void bar() {
+cout << "Calling bar()..." <<endl;
+this->foo(); // Calling foo() using the 'this' pointer
+}
+};
+
+int main() {
+MyClass obj;
+obj.bar();
+
+return 0;
+}
+
+Output:
+
+Calling bar()...
+Calling foo()...
+
+
+How To Delete The ‘this’ Pointer In C++?
+
+It is important to note that one cannot explicitly delete the 'this' operator in C++. That is, the 'this' pointer is automatically managed by the language and does not need to be explicitly deleted. The lifetime and deallocation of objects in C++ are handled by the language's memory management mechanisms, such as stack allocation, automatic destruction, or manual deallocation through the 'delete' operator for dynamically allocated objects.
+
+The 'this' pointer is implicitly available within the scope of non-static member functions of a class. It points to the current object for which the member function is called. The program execution environment manages an object's memory, and the memory is released when the object goes out of scope or is explicitly deallocated. The example below showcases the working of this process.
+
+Example:
+
+#include <iostream>
+using namespace std;
+class MyClass {
+public:
+MyClass() {
+cout << "Constructor called. this = " << this << endl;
+}
+
+~MyClass() {
+cout << "Destructor called. this = " << this << endl;
+}
+};
+
+int main() {
+MyClass* obj = new MyClass();
+cout << "Object address: " << obj <<endl;
+
+delete obj;
+
+return 0;
+}
+
+Output:
+
+Constructor called. this = 0x12345678 (Example address)
+Object address: 0x12345678 (Example address)
+Destructor called. this = 0x12345678 (Example address)

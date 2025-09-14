@@ -1,0 +1,242 @@
+Operator overloading imp points from slides.
+
+1) 2 methods for binary operator overloading either for member or non-member functions;
+    
+   a) Class operator+(Complex &obj)
+       {
+          Class temp;
+          temp.a = a +  obj.a;
+          temp.b = b +  obj.b;
+           return temp;
+        }
+
+   b) Class operator+(Complex &obj)
+       {
+          int c = a +  obj.a;
+          int d = b +  obj.b;
+           return Class(c, d);
+        }
+
+2) Operator Overloading for non-member functions:
+
+   a)There should be friend function.
+   b)Getter and setter should be there if you want to access private/protected data members.
+
+3) Methods to define binary operator overloading in main().
+
+    a) c = a + b;
+    b) c = a.operator@(b);// but this condition will not handle such suituations. 
+       Complex c1;
+       c1 + 5.67; // compiler will treat it as c1.opertor+(int)
+       In order to attain we have to customize our operator accordingly.
+
+     E.g:
+
+       Complex & operator +(double d)
+      {
+          double real = _real + d;
+          double imag = _imag;
+          return(Complex(real, imag));
+      }
+
+    c) Problem arises if we try to execute the following:
+       Complex c, c1;
+       c = 2.325 + c1;
+       In this case, the only option is to define the operator+ function as non-member (friend) function with two arguments:
+  
+    E.g:
+       class Complex {
+                     ...//everything remains same
+                     friend Complex operator +(double lhs, const complex &);
+                     ...
+                      };
+
+     Complex operator +(double lhs, const complex & rhs) {
+              double real = _real + d;
+              double imag = _imag;
+              return Complex(real, imag);
+      }
+
+    d) To perform operations in a single mathematical statement e.g:  c1+c2+c3+c4
+        No special code is needed to add 3 or more operands.
+        The compiler chains multiple calls to the binary operator in sequence.
+        Complex c = c1 + c2 + c3;
+        The above statement is automatically converted by the compiler into the following:
+       (c1.operator +(c2)).operator +(c3);
+
+Restrictions on Operator Overloading:
+
+    • The overloaded operator must have at least one operands of the user-defined types. You cannot overload an operator working on fundamental types.
+      you can't overload the '+' operator for two ints (fundamental type) to perform subtraction.
+      For example, operator+(int a, int b) will not work.
+
+
+2) Stream Insertion / Extraction Operator:
+
+ --> We can’t directly use the Input/Output Operators (>>/<<) on objects. The simple explanation for this is that the Input/Output Operators (>>/<<) are 
+     predefined to operate only on built-in Data types. As the class and objects are user-defined data types, so the compiler generates an error.
+
+Example:
+
+        class C{
+
+               };
+
+       int main() 
+       {
+           C c1;
+           cin>>c1;
+           cout<<c1;
+           return 0;
+       }
+
+--> c1 are variables of type “class C”. Here compiler will generate an error as we are trying to use Input/Output Operators (>>/<<) on user-defined          
+    datatypes.
+
+Example:
+        
+#include<iostream> 
+using namespace std; 
+  
+class Fraction { 
+  
+private: 
+    int numerator; 
+    int denominator; 
+  
+public: 
+    // constructor 
+    Fraction(int x = 0, int y = 1) 
+    { 
+        numerator = x; 
+        denominator = y; 
+    } 
+  
+    // Operator Overloading Performed 
+    // Friend function used because of two classes 
+    friend istream& operator>>(istream& cin, Fraction& c) 
+    { 
+        cin >> c.numerator >> c.denominator; 
+        return cin; 
+    } 
+  
+    friend ostream& operator<<(ostream&, Fraction& c) 
+    { 
+        cout << c.numerator << "/" << c.denominator; 
+        return cout; 
+    } 
+}; 
+  
+int main() 
+{ 
+    Fraction x; 
+    cout << "Enter a numerator and denominator of "
+            "Fraction: "; 
+    cin >> x; 
+    cout << "Fraction is: "; 
+    cout << x; 
+    return 0; 
+}
+
+3) Unary Operator:
+
+• ++ (Increment Operator)
+• - - (Decrement operator)
+• – (Negation operator)
+• ! (Logical NOT Operator)
+etc.
+
+• Unlike the operators you’ve seen so far, the logical not (!) operator is a unary
+operator, which means it only operates on one operand.
+• It can be defined as a non-member as well as member function.
+
+1. To overload logical NOT (operator!) as non-member friend function:
+    class Point {
+       ....
+    friend bool operator! (Point & point);
+   };
+
+The compiler translates “!p" to "operator!(p)".
+
+2. To overload logical NOT (operator!) as a member function:
+     class Point {
+         public:
+               bool operator!(); // this Point
+        };
+
+The compiler translates “!p" to "p.operator!()".
+
+Example:
+        
+class Point {
+       private:
+               int x, y;
+       public:
+              Point(int x, int y) : x(x), y(y) { }
+              bool operator! () const 
+              {
+                   return (x == 0.0 && y == 0.0 ); //returns True if condition fulfills
+              }
+        };
+           int main() 
+        {
+            Point p(0,0);
+
+           if (!p1)
+           cout << "point is set at the origin.\n";
+
+           else
+           cout << "point is not set at the origin.\n";
+        }
+
+4) Overloading subscript [] Operator:
+
+The Subscript or Array Index Operator is denoted by ‘[]’. This operator is generally used with arrays to retrieve and manipulate the array elements. This is a binary or n-ary operator and is represented in two parts:
+postfix/primary expression
+expression:
+
+syntax: return_type(int,float) operaor[](argument 1(index), argument 2(index))
+              return (argument2[1]);
+
+5) Assignment Operator Overloading:
+
+#include <iostream> 
+using namespace std; 
+
+class student { 
+private: 
+	int english; 
+	int math; 
+public: 
+	student(int e, int m) 
+	{ 
+		english = e; 
+		math = m; 
+	} 
+	void operator=(const student& s) 
+	{ 
+		english = s.english; 
+		math = s.math; 
+	} 
+	void marks() 
+	{ 
+		cout << "English: " << english << ", Math: " << math 
+			<< endl; 
+	} 
+}; 
+
+int main() 
+{ 
+	student s1(6, 2), s2(5, 10); 
+
+	// use assignment operator 
+	s1 = s2; 
+
+	cout << "Student 1 marks : "; 
+	s1.marks(); 
+
+	cout << "Student 2 marks : "; 
+	s2.marks(); 
+
+	return 0; 
+}

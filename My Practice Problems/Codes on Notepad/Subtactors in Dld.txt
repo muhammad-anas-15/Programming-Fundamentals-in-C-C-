@@ -1,0 +1,58 @@
+Subtactors in Dld:
+                 "The binary digits subtraction can be done with the help of the subtractor circuit. This is one kind of combinational 
+                  logic circuit, used to perform the subtraction of two binary digits like 0s and 1s. Subtraction of binary digits from 0 to 0
+                  or 0 to 1 does not alter the result, subtraction of 1 to 1 will result as 0 but the subtraction of 1 to 0 needs borrow."
+
+
+   a) Half Subtracter: (2 bit system, 4 combinations)
+                 The half subtracter circuit has two inputs: A and B, which add two input digits and generates two Outputs
+                    i) carry     ii) difference.
+
+      Logic Diagram:
+                    To perform the difference operation, XOR is applied to both the inputs, --> Sum= A XOR B
+                    and AND gate is applied to both inputs to produce carry.         --> Carry = A AND B
+
+      Boolean Expression:
+
+      1) Difference(D) = A'B + AB'/(A⊕B)--> the sum output is 1 only if the input variables, A and B, are not equal, can be expressed as the exclusive-OR of A,B.
+      2) Carry(Cout/Borrow) = A'.B --> the output carry (Cout) is 1 only when A is 0s & B is 1's,therefore, Cout can be expressed as the AND of A and B.
+
+
+
+      Truth Table: 
+
+                           Inputs                                      Outputs
+                       A           B                               Diff         Borrow
+                       0           0                                0             0
+                       0           1                                1             1
+                       1           0                                1             0
+                       1           1                                0             0
+
+
+     b) Full Adder: (3 bit system, 9 combinations)
+                   The full-subtracter has three inputs, first two inputs are A and B and the third input is an input carry as B-IN and two outputs Diff  
+                   and Borrow, whereas half subtacter has only two inputs and two outputs.  
+
+     Logic Diagram:
+                   To perform the sum operation, XOR is applied to three inputs, --> Sum = A XOR B XOR Cin.
+
+     Boolean Expression:
+                 
+            1) Diff is  S = (A⊕B⊕Bin) 
+            2) Carry is Cout = A'(B ⊕ C)Cin   --> or  A'Bin + A'B + B Bin
+
+      Truth Table: 
+
+                             Inputs                                         Outputs
+                       A           B       Cin                         Sum          Carry
+                       0           0        0                           0             0
+                       0           0        1                           1             0
+                       0           1        0                           1             0
+                       0           1        1                           0             1
+                       1           0        0                           1             0
+                       1           0        1                           0             1
+                       1           1        0                           0             1
+                       1           1        0                           1             1
+
+
+ 

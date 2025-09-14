@@ -1,0 +1,63 @@
+Difference between Overloading and Overriding:
+
+
+1) Overloading:
+
+    Definition:
+               Overloading occurs when multiple functions have the same name but different parameters within the same class.
+
+    Occurence:
+               Overloading is resolved at compile-time (static polymorphism or early binding).
+
+    Usage:
+               Overloading is used when you want multiple functions with the same name to perform different tasks based on the parameters passed.
+
+    Inheritance:
+               Overloading can occur in the same class or in different classes, but it is not related to inheritance.
+
+
+2) Overriding:
+
+    Definition:
+               Overriding occurs when a derived class provides a specific implementation of a method that is already provided by one of its base classes.
+    Occurence:
+               Overriding is resolved at runtime (dynamic polymorphism or late binding).
+
+    Usage:
+          Overriding is used when you want to change the behavior of a method in a subclass, providing a specific implementation that differs from the base class.
+
+    Inheritance:
+                Overriding occurs in the context of inheritance, where a subclass provides a specific implementation of a method defined in its superclass.
+
+
+Example:
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Base {
+public:
+    void display() {
+        cout << "Display function in Base class" << endl;
+    }
+};
+
+// Derived class overriding display() method
+class Derived : public Base {
+public:
+    void display() {
+        cout << "Display function in Derived class" << endl;
+    }
+};
+
+int main() {
+    Derived derivedObj;
+    derivedObj.display(); // Calls display() method of Derived class, becuase it first give priority to it's memeber function, this method/functioning is              c   called Overriding
+    return 0;
+}
+
+Output:
+Display function in Derived class
+
+--------------------------------

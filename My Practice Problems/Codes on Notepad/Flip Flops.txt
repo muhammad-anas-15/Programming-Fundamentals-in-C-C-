@@ -1,0 +1,16 @@
+Flip Flops:
+           --> The flip-flop is a circuit that maintains a state until directed by input to change the state. 
+           --> Flip-flop is popularly known as the basic digital memory circuit.
+           --> It has its two states as logic 1(High) and logic 0(low) states.
+           --> A flip flop is a sequential circuit which consist of single binary state of information or data. 
+
+Types of Flip-Flops
+
+                     SR Flip Flop
+                     JK Flip Flop
+                     D Flip Flop
+                     T Flip Flop
+
+1) J-K Flip Flop:
+
+               In JK flip flops, The basic structure of the flip flop which consists of Clock (CLK), Clear (CLR), Preset (PR).

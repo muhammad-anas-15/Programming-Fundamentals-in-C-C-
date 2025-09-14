@@ -1,0 +1,7 @@
+UML Diagram:
+
+key concepts:
+
+   1) "+" sign shows that the data members or functions are 'public' the are accessible every where in the program.
+   2) "-" sign shows that the data members or functions are 'private' the are accessible only within that class. 
+   3) "#" sign shows that the data members or functions are 'protetcted' the are accessible only within the derived class.

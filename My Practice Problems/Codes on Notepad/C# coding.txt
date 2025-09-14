@@ -1,0 +1,77 @@
+C# coding
+
+Example 1:
+
+
+using System;
+
+class Bounce 
+{
+  static void Main() 
+  {
+    int x = 8;
+    int y = 3;
+    int z = x + y;
+    Console.WriteLine("Hello World");
+    Console.WriteLine(z);
+    
+    if(x > y && x > z) 
+       Console.WriteLine("X is greater.");
+    else if(x>y && x < z)   
+       Console.WriteLine("Z is greater.");
+    else   
+       Console.WriteLine("Y is greater.");
+  }
+  
+}
+
+Output:
+       Hello World
+       11
+       Z is greater.
+
+Example 2:
+
+
+using System;
+
+class Calculator 
+{
+    int a;
+    int b;
+    
+    void add(){
+        int result = a+b;
+        Console.WriteLine(result);
+    }
+    void sub(){
+        int result = a-b;
+        Console.WriteLine(result);
+    }
+    void mul(){
+        int result = a*b;
+        Console.WriteLine(result);
+    }
+    void div(){
+        int result = a/b;
+        Console.WriteLine(result);
+    }
+    
+  static void Main() 
+  {
+    Calculator C1= new Calculator();
+    C1.a = 7;
+    C1.b=9;
+    C1.add();
+    C1.sub();
+    C1.mul();
+    C1.div();
+    
+}
+}
+
+Output:
+      16
+     -2
+     63
+     0

@@ -1,0 +1,43 @@
+#include<stdio.h>
+int average_daily_balance();
+float interest();
+
+
+int main()
+{
+ int net_balance,payment,d1,d2;
+float monthly_interest_rate;
+
+net_balance= 12000;
+payment =8000;
+d1 =30;
+d2 =15;
+monthly_interest_rate =0.02;
+
+printf("Average daily balance =%f",average_daily_balance());
+printf("Intersest =%f",float interest());
+
+return 0;
+}
+
+
+
+
+return 0;
+}
+int average_daily_balance()
+{
+float averagedailybalance;
+averagedailybalance = ((net_balance * d1) - payment *d2) / d1;
+return averagedailybalance;
+}
+float interest()
+{
+ float interest;
+interest = averagedailybalance * monthly_interest_rate;
+
+return interest;
+}
+
+
+

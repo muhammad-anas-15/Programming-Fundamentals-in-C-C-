@@ -1,0 +1,41 @@
+Machine Learning / Artificial Intelligence :
+
+                   Machine learning (ML) is a type of artificial intelligence (AI) and computer science focused on building 
+                   computer systems that learn from data, it focuses on using data and algorithms to enable AI to imitate the
+                   way that humans learn, gradually improving its accuracy.
+
+                   Machine learning algorithms are trained to find relationships and patterns in data. In simpler terms, machine 
+                   learning enables computers to learn from data and make decisions or predictions without being explicitly programmed
+                   to do so.
+
+                   They use historical data as input to make predictions, classify information, cluster data points, reduce
+                   dimensionality and even help generate new content, as demonstrated by new ML-fueled applications such as 
+                   ChatGPT, Dall-E 2 and GitHub Copilot.
+
+        " In traditional programming, a computer follows a set of predefined instructions to perform a task. However, in machine learning, 
+          the computer is given a set of examples (data) and a task to perform, but it's up to the computer to figure out how to accomplish
+          the task based on the examples it's given."
+                       
+                   For instance, if we want a computer to recognize images of cats, we don't provide it with specific instructions on
+                   what a cat looks like. Instead, we give it thousands of images of cats and let the machine learning algorithm figure
+                   out the common patterns and features that define a cat. Over time, as the algorithm processes more images, it gets 
+                   better at recognizing cats, even when presented with images it has never seen before.
+
+
+Q) Why Should We Learn Machine Learning?
+
+                 " Machine learning is a powerful tool that can be used to solve a wide range of problems. It allows computers 
+                   to learn from data, without being explicitly programmed. This makes it possible to build systems that can 
+                   automatically improve their performance over time by learning from their experiences. "
+
+There are many reasons why learning machine learning is important:
+
+1)  Machine learning is widely used in many industries, including healthcare, finance, and e-commerce. By learning machine learning, 
+    you can open up a wide range of career opportunities in these fields.
+
+2)  Machine learning can be used to build intelligent systems that can make decisions and predictions based on data. This can help 
+    organizations make better decisions, improve their operations, and create new products and services.
+
+3)  Machine learning is an important tool for data analysis and visualization. It allows you to extract insights and patterns from 
+    large datasets, which can be used to understand complex systems and make informed decisions.
+

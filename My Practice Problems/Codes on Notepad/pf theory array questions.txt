@@ -1,0 +1,44 @@
+pf theory array questions
+Q1)
+
+Code:
+ #include <stdio.h>
+
+int main() {
+      int quizes[10];
+      int average,sum=0;
+      for (int i=0;i<=9;i++)
+      {
+          printf("Enter marks of quize %d.:",i++);
+          scanf("%d",&quizes[i]);
+          
+          sum = sum + quizes[i];
+      }
+      average =sum /10;
+      printf("Average is %d",average);
+      } 
+
+
+Q2) Program to find index number of array
+
+Code:
+#include <stdio.h>
+
+int main()
+{
+    int myarray[5]={3,5,7,8,9};
+    int num;
+    int fact=0;
+    scanf("%d",&num);
+    for (int i=0 ;i<5; i++)
+    {
+        if (myarray[i]==num)
+        {
+        printf("Index no %d",i);
+        
+        }    
+    }
+     
+    return 0;
+}
+

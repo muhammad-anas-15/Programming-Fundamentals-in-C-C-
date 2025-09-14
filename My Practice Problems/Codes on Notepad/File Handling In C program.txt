@@ -1,0 +1,94 @@
+File Handling.
+
+fputc --> write character to file.
+
+
+
+
+
+
+
+
+
+ FILE* pointer_name;
+ FILE* fopen(const char *file_name, const char *access_mode);
+ "w" is se file create hoti he jo pehle na ho. agr file pehle se exist he tu koi bat ni.
+ "r" read krta he
+ "a"
+.Jb bhi file open karo us ko close lazmi karo.
+
+1) For creating a new txt file .
+
+Code:
+#include <stdio.h>
+
+int main() {
+	
+    FILE *ptr;
+    ptr = fopen("file(name).txt","w");
+   
+    fclose(ptr);
+    return 0;
+}
+
+
+2) For writing a content in that file
+
+code:
+#include <stdio.h>
+
+int main() {
+	
+    FILE *ptr;
+    ptr = fopen("file(name).txt","w");
+
+    fprintf(ptr,"file11 ki txt file bn gai he."); // fputs function b use kr skte ho us sa ka use jb koi input user se leni ho aese ho ga 
+                                                  // fputs(string ka name, file ka pointer).
+    fclose(ptr);
+    return 0;
+}
+
+
+
+
+3) If you want to read data from txt file.
+
+Code:
+
+#include <stdio.h>
+
+int main() {
+	
+    FILE *ptr;
+    ptr = fopen("file.txt","r");
+      
+    char str[1000];
+    while(fgets(str,1000,ptr) !=NULL) //If you use "if" instead of while it will print only first line. //fgets ka use jb file ka save data print krna ho.       
+
+    {
+    	printf("%s\n",str);
+	}
+   
+    return 0;
+}
+
+4) Delete a file 
+Code:
+
+// C program that demonstrates
+// the use of remove() function
+#include <stdio.h>
+
+int main()
+{
+	if (remove("abc.txt") == 0)
+		printf("Deleted successfully");
+	else
+		printf("Unable to delete the file");
+
+	return 0;
+}
+
+5)  Program to Count no of Lines in a Text File.
+
+Code:

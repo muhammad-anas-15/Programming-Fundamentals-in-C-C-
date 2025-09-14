@@ -1,0 +1,117 @@
+List in Python:
+
+                * Lists are just like dynamically sized arrays, but it canstore different size of datatypes like int, float ,strings etc.
+                * In simple language, a list is a collection of things, enclosed in "[ ]" and separated by commas.
+                * The list is a sequence data type which is used to store the collection of data. " Tuples " and  " String " are other types of sequence data types.
+
+
+
+  a) Creating a list in Python:
+ 
+           # Python program to demonstrate
+
+          # Creating a List
+             List = []
+             print("Blank List: ")
+             print(List)
+
+          # Creating a List of numbers
+            List = [10, 20, 14]
+            print("\nList of numbers: ")
+            print(List)
+
+         # Creating a List of strings and accessing
+         # using index
+
+           List = ["Geeks", "For", "Geeks"]
+
+           print("\nList Items: ")
+           print(List[0])
+           print(List[2])
+
+ 
+  b) Creating a list with multiple distinct or duplicate elements:
+
+        # Creating a List with  the use of Numbers
+        # (Having duplicate values)
+
+            List = [1, 2, 4, 4, 3, 3, 3, 6, 5]
+            print("\nList with the use of Numbers: ")
+            print(List)
+
+       # Creating a List with mixed type of values
+         # (Having numbers and strings)
+
+          List = [1, 2, 'Geeks', 4, 'For', 6, 'Geeks']
+          print("\nList with the use of Mixed Values: ")
+           print(List)
+
+
+      # Accessing elements from a multidimensional list
+
+         # Creating a Multi-Dimensional List  (By Nesting a list inside a List)
+             List = [['Geeks', 'For'], ['Geeks']]
+
+        # accessing an element from the List using index number
+
+            print("Accessing a element from a Multi-Dimensional list")
+            print(List[0][1]) // For
+            print(List[1][0]) //Geeks
+
+
+  --> Negative indexing:
+   
+       * In Python, negative sequence indexes represent positions from the end of the List.
+      * Negative indexing means beginning from the end, -1 refers to the last item, -2 refers to the second-last item, etc.
+      *  A list can be reversed by using the reverse().
+      * Elements can be removed from the List by using the built-in remove().
+
+  Example:
+
+          List = [1, 2, 'Geeks', 4, 'For', 6, 'Geeks']
+
+         # accessing an element using negative indexing
+        # print the last element of list
+             print(List[-1])// Geeks
+
+       # print the third last element of list
+          print(List[-3]) // For
+
+
+ --> Getting the size of Python list:
+
+    * Python len() is used to get the length of the list.
+
+--> Taking slices out of List:
+
+    * Copying consecutive elements from one List to another.
+    * There is range of indexes showing start end of list to copied.
+    * If ending range is empty it will copy till end.   like Index[0: ]
+      
+  Syntax:
+                new_list  = existing_list [index(first) : index(last)]
+
+
+ --> pop() method:
+
+       * Used to remove and return an element from the list, 
+       * By default it removes only the last element of the list, 
+        * To remove an element from a specific position of the List, the index of the element is passed as an argument to the pop() method.
+
+
+   Example:
+                     List = [1, 2, 3, 4, 5]
+
+                   # Removing element from the
+                   # Set using the pop() method
+                      List.pop()
+                     print("\nList after popping an element: ")
+                     print(List)
+
+                 # Removing element at a specific location from the Set using the pop() method
+                    List.pop(2)
+                    print("\nList after popping a specific element: ")
+                    print(List)
+
+  
+

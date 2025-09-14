@@ -1,0 +1,90 @@
+Array Problems
+> if you pass array to the function you only pass array name with empty brackets as an argument and in function   calling you only write arrayname without brackets. 
+
+
+
+Reverse of Array
+
+Code:
+#include <stdio.h>
+
+int main()
+{  
+    int array[5];
+    for (int i=0 ;i<5; i++)
+    {
+        printf("Enter number %d\n",i+1);
+        scanf("%d",&array[i]);
+    }
+    
+    for (int i=4; i>=0 ;i--)
+    {
+        printf("{%d,}",array[i]);
+    }
+}
+
+OUTPUT:
+
+Enter number 1
+4
+Enter number 2
+6
+Enter number 3
+2
+Enter number 4
+7
+Enter number 5
+9
+{9,}{7,}{2,}{6,}{4,}
+
+
+Ques: Given an array of marks of students, if the mark of any student is less than 35 print its roll number. [roll number here refers to the index of the array.]
+
+Code:
+
+#include <stdio.h>
+
+int main()
+{  
+    int array[10] ={36,87,65,43,22};
+     
+    for (int i=0; i<=4 ;i++)
+    {
+        if (array[i] < 35)
+        {
+        printf("%d", i);
+        }
+    }
+}
+
+Output:
+
+=4
+
+Merge 2 arrays.
+
+Code:
+#include <stdio.h>
+
+int main() {
+int array1[5]={2,4,6,2,5};
+int array2[5]={4,6,8,9,0};
+int result[10];
+
+for(int i=0; i<5; i++)
+{
+    result[i]=array1[i];
+    
+}
+for(int i=0; i<5; i++)
+{
+    result[i+5]=array2[i];
+    
+}
+for(int i=0; i<10; i++)
+{
+   printf("%d,",result[i]);
+}
+
+    return 0;
+}

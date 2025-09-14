@@ -1,0 +1,38 @@
+Multiplexer: 
+            1) The multiplexer is a device that has multiple inputs and single line output. 
+            2) The select lines determine which input is connected to the output, and also increase the amount of data that can be sent over a network 
+               within a certain time.
+            3) It is also called a data selector.
+            4) It has 2^n input lines and single output.
+
+Example:
+           
+         The single-pole multi-position switch is a simple example of a non-electronic circuit of the multiplexer, and it is widely used in 
+         many electronic circuits. The multiplexer is used to perform high-speed switching and is constructed by electronic components.
+
+Multiplexer Types:
+                  2-1 multiplexer ( 1select line)
+                  4-1 multiplexer (2 select lines)
+                  8-1 multiplexer(3 select lines)
+                  16-1 multiplexer (4 select lines)
+
+
+1) 4-to-1 Multiplexer:
+ 
+                      The 4 X 1 multiplexer comprises 4-input bits, 1- output bit, and 2- select lines. The four input bits are namely Do, D1, D2, and D3.
+
+ Truth Table:
+                         Selection Lines                   Output 
+                        S1         So                        Y
+                         0          0                        Io
+                         0          1                        I1
+                         1          0                        I2
+                         1          1                        I3
+
+Boolean Expression:
+                           Y = S1'So'Io + S1'SoI1 + S1So'I2 + S1SoI3 
+        
+
+2) 8-to-1 Multiplexer:
+ 
+                      The 8-to-1 multiplexer consists of 8 input lines, one output line, and 3 selection lines.  

@@ -1,0 +1,84 @@
+Association                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     zh
+
+Association:
+        
+   * It is a "HAS-A" relationship.
+   
+   * It is a relationship between two separate classes which establishes through their objects
+   
+   * class --> another class
+  
+   * Create a new class composed of existing class.
+
+   * Members are accessible by the use of reference (pointer) 
+
+   * We can use "this" pointer which point to current class members. 
+
+   * Association is a relationship between two classes that defines a   connection or a link between them.
+
+   * The association can be bi-directional, meaning that both classes can use each other’s methods and properties.
+
+   * The relationship can be of any type, such as a one-to-one, one-to-many, or many-to-many.
+
+   * For example, a Customer class might be associated with an Order class, where each customer can have multiple orders.
+
+   * Association is a simple structural connection or channel between classes and is-a relationship where all objects have their
+     own lifecycle and there is no ownwer.
+
+Example:
+        Multiple Patients can associate with a single doctor and single patient can associate with multiple doctors, but there is 
+        no ownership between the objects and both have their own lifecycle. Both can create and delete independently .
+
+
+One to one Association:
+    
+    * In one-to-one association only one object is associated with other object at a time.
+  
+    * The mulitiplicity symbol "1" is written at the end of the link to represent that there is only one object present in communication.
+
+    * A line without multilicity indicates one-to-one association
+
+Examples:
+        1) Employee(1) --- has ---> (1)Emp-code
+        
+        2) State --------------------- City   //  class diagram shows association b/w classes
+           Name    --- Has-Capital --- Name 
+
+        3) State --------------------- City  //   association b/w objects
+           US  ------ Has-Capital ---  chicago 
+
+     Note: Example program in dev. 
+
+
+One to many association:
+
+     * One object is associated with one or more objects at a time
+
+Examples:
+     
+        1) Customer(1) ---- has ---- (*)Accounts // "*" shows many association means 1 customer has many accounts
+
+        2) Customer ---- has ---- Account(A) // instant objects
+            (Ali)   ---- has ---- Account(B) // links b/w objects
+
+       
+Many to one association:
+
+      * Many objects are associated with one or more objects at a time
+
+Example:
+
+          Person (*)--- works_for --- Company
+            Name                        Name
+            id                          Address
+
+Many to many association:
+
+       * Many objects are associated with one or more objects at a time.
+
+Example:
+        
+         Customer(*) ---- Purchases ----(*) Products
+          Name                         Name
+        
+            

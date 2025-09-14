@@ -1,0 +1,30 @@
+Aggregation:
+
+    * It deals with whole-part relationship.
+
+    * It is a specialized form of association where all objects have their own life cycle , but there is ownership and a child object cannot 
+      belong to another parent object.
+ 
+    * It is a weaker "has-a" relationship.
+
+    * One class needs another class object to complete its execution.
+
+    * Unidirectional relationship between two classes in which one class is owner.
+
+    * Object will be created in main and the ownership class contains a reference of that object.
+
+    * The object of owned class can be associate with another class.
+
+    * Lifetime of each object don’t depend on each other.
+    
+    * Aggregate object is not a part of the container and it can exist independently.
+
+    * In C++ aggregation is a process in which one class define another class as any entity reference. It is another way to reuse the class. 
+
+Example:
+      
+        Person has Address is represented using two classes Person and Address. Since as we can see, Address has a Person is meaningless thus Person is container class and Address is a class whose object is contained within the
+container class object.            
+
+
+   

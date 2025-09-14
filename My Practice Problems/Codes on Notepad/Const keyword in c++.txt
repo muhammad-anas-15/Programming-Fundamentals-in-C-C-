@@ -1,0 +1,123 @@
+Const keyword:
+
+   * something that can't change.
+ 
+ 1) Const class data members
+ 2) Const class objects.
+ 3) Const class member functions.
+
+1) Const class data members:
+  * Data variables in class which made constant.
+  * Const data members must be initialized during declaration or within the constructor's initializer list. Example 
+        
+                                  class Circle {
+                                     public:
+                                  // Const data member with initializer list
+                                     const double PI = 3.14159;
+                                     double radius;
+
+                                     Circle(double r) : radius(r) {}
+;
+                                 // Const member function using const data member
+                                     double area() const {
+                                     return PI * radius * radius;
+                                      }
+                                     };
+  
+    You cannot assign a value to them later.
+  * Since the value is fixed, const data members can only be read from, not modified.
+   
+  Example:
+      class Test{
+       const int i;
+      public:
+       void show(int x){
+         i = x; // compile time error as i is const.// or write const int i=10
+               }
+       };
+      int main(){
+       Test T1;
+       T1.show(10);
+
+
+2) Const class object:
+   * When an object is declared or created with 'const', it's data members can never be changed, during lifetime.
+   * Only const member functions can be called on a const object. Const member functions guarantee they won't modify 
+     the object's state, making the code safer.
+   * Similar to const data members, const objects must be fully initialized at the time of declaration.
+    
+
+         Example:
+                                   class data{
+	                             public:
+		                   void display(void) const;
+                                        };
+                                   void data::display(void) const
+                                       {
+	                                    cout<<"kesa he"<<endl;
+                                        }
+
+                                   int main(){
+	                             const data d1;
+	                             d1.display();
+                                       }
+
+--> Initializing const objects:
+
+   • A constructor must be non-const member function
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+private:
+    const string name;
+    int age;
+
+public:
+    // Constructor with initializer list to initialize const member
+    Person(const string& n, int a) : name(n), age(a) {}
+
+    void display() const {
+        cout << "Name: " << name << ", Age: " << age << endl;
+    }
+};
+
+int main() {
+    // Initializing a constant object of the Person class
+    const Person john("John", 30);
+
+    // Accessing and displaying the constant object
+    john.display();
+
+    return 0;
+}
+
+
+
+3) Const Member Function:
+
+  * There are functions that are meant to be read only.
+  * Keyword const is placed at the end of the parameter list.
+  * Usually Getter functions are declared const to avoid any unintentional modification to the data members.
+  * Constant member function cannot change data member.
+  * Constant member function cannot access non-constant member functions, even if the latter does not modify any data member.
+  * In addition, constructor and destructor are used to modify the object to a well defined state.
+
+Syntax: return_type() const{}
+
+
+ How we can initialize const data members ?
+
+ Member initializer list:
+
+  * Initialize at the same time of declaration.
+  * Constructors can use member initializer list to initialize const data members (and non-const) of a class.
+  * It is given after closing parenthesis of parameter list of constructor.
+  * In case of more then one member, use comma separated list.
+  * Const as well as non-const data members can be initialized using Member initializer list.
+
+ Syntax: class_name(arguments-list) : Initialization section -> data_member-1(parameter 1) : data_member-2(parameter 2)
+
+

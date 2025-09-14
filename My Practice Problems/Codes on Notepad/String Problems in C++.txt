@@ -1,0 +1,48 @@
+String Problems in C++
+
+Reverse of a string:
+1) First count length of string which can be calculated by
+     i. strev()
+    ii. str.length()
+   iii. while (length != '\0)  { lenght++}
+
+2) Loop will until half of length of string so that the corner elements replaced until reach center.
+   i.e: Anas
+        A <---> s
+        n <---> a
+such as if length of string is 
+       8 (0---3)
+       9 (0---3)
+      12 (0---5)
+
+3) Take extra char or string array in which you store the reverse arraay.
+
+
+Code:
+#include <iostream>
+#include<string>
+using namespace std;
+int main() {
+    
+    string str;
+    cout<<"Enter string:";
+    getline(cin,str);
+    int length;
+    length = str.length();
+    cout<<length<<endl;
+    
+    char temp;
+    for(int i=0; i<(length-1)/2; i++)
+    {
+        temp= str[i];
+        str[i] =str[length -1-i];
+        str[length-1-i] = temp;
+    }
+    cout<<"revese string is: ";
+    for(int i=0; i<length; i++)
+    {
+        cout<<str[i];
+    }
+
+    return 0;
+}

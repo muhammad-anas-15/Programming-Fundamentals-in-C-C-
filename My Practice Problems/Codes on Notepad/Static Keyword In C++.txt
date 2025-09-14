@@ -1,0 +1,82 @@
+Static Keyword In C++:
+
+ * Static keyword uses of Two types:     1) Data Members         2) Member Function
+
+ 1) Data Member:
+
+    * When we declare a data member as a static either inside or outside of a class.  
+    * There is only one copy of static data member either there are many class objects.
+    * It is always initialized with zero whenever 1st object is created because its default value is zero.
+    * It shared memory for all objects of class.
+    * It retains it's value.
+    * It's visibility is entire program.
+    * If we declaring static data member as Private we can only access it by using static member function. 
+      class Student {
+         private:
+         static int noOfStudents;
+
+         public:
+           ...
+            };
+          int Student::noOfStudents = 0;
+              /*private static member cannot be accessed
+                outside the class except for initialization*/
+     * To access private static class member, provide a public static member function.
+
+Life of data static members:
+     
+     • They are created even when there is no object of a class.
+     • They remain in memory even when all objects of a class are destroyed.
+       
+          
+    Synatx:                  static data_type variable name;
+
+Example:
+
+#include <iostream>
+using namespace std;
+class Value{
+    private:
+     int a,b;
+     static int x;
+     
+    public:
+     void input(int c, int d)
+     {
+         a = c;
+         b = d;
+         x += 1;
+     }
+     void output()
+     {
+         cout<<"a: "<<a<<"\t"<<"b: "<<b<<"\t"<<"x: "<<x<<endl;
+     }
+};
+int Value::x;// static variable value can be initialized/change through constructor and also in main function.
+
+int main() {
+   Value d1,d2,d3;
+   d1.input(4,9);
+   d1.output();
+   d2.input(10,90);
+   d2.output();
+   d3.input(54,79);
+   d3.output();
+    return 0;
+}
+
+Output:
+a: 4	b: 9	x: 1
+a: 10	b: 90	x: 2
+a: 54	b: 79	x: 3
+
+
+ 2) Member Function:
+ 
+   * If we create a member function of class as a static called static member function.
+   * Access only static data members.
+   * It is also accessible if we have no object of class by using scope resolution operator.
+   * A static member function can only access other static members (data members and functions) of the same class.
+   * Static member functions are called using the class name and the scope resolution operator (::), rather than through an object instance.
+
+    Synatx:                  static return_type functio_name();
